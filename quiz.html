@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+     <meta charset="utf-8" />
+     <title>Quizicle</title>
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" >
+     <link rel="stylesheet" href="style.css" >
+</head>
+<body>
+     <div class="nav_bar">
+          <img id="quiz_icon" src="https://static.thenounproject.com/png/28038-200.png"/>
+          <div id="nav_search">
+               <input type="text" id="nav_search_box" placeholder="Search"/>
+               <button type="button" id="nav_search_button"><i class="fas fa-search"></i></button>
+          </div>
+          <button type="button" id="nav_menu_button"><i class="fas fa-align-justify"></i></button>
+     </div>
+     <div class="quiz">
+          <div class="quiz_header">
+               <h3 class="quiz_title">Quiz 1</h3>
+               <div class="count">
+                    <p class="num_count">2</p>
+                    <p id="count_suffix">Questions</p>
+               </div>
+          </div>
+          <div class="quiz_info">
+               <p class="description">This quiz is a sample quiz. This is the description box that can be filled with text.</p>
+               <ul class="tag_container">
+                    <li class="tag">CS</li>
+                    <li class="tag">Midterm</li>
+                    <li class="tag">HTML</li>
+                    <li class="tag">CSS</li>
+               </ul>
+               <div class="quiz_credit">
+                    <p>Created by </p>
+                    <a class="user_handle" href="#"><p>@Author</p></a>
+                    <p class="creation_date">5/28/29</p>
+               </div>
+          </div>
+          <button type="button" class="take_quiz_button">Take Quiz</button>
+          <ol class="question_container">
+               <div class="question" id="q_header">
+                    <p>Questions:</p>
+                    <button id="edit_button">Edit</button>
+               </div>
+               <div class="question">
+                    <li class="q">2+2=?</li>
+                    <p class="ans">4</p>
+               </div>
+               <div class="question">
+                    <li class="q">Another question</li>
+                    <p class="ans">Another answer</p>
+               </div>
+          </ol>
+     </div>
+</body>
+</html>
