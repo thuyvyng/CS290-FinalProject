@@ -51,12 +51,13 @@ body {
      width: auto;
 }
 .count {
-     display:inline-flex;
+     display: flex;
      color: black;
      border: 2px solid black;
      font-weight: bold;
-     align-content: center;
-     margin:0;
+     margin: 0;
+     max-height: 3ex;
+     padding: 1px;
 }
 .num_count {
      padding-right: .5em;
@@ -91,4 +92,23 @@ body {
      width:100px;
      background-color:#00000020;
      border:1px solid black;
+}
+
+.question_container{
+     margin-top: 30%;
+     border-top: 2px solid black;  
+     display: flex;
+     flex-direction:column;
+     justify-content: flex-start;
+}
+.question {
+     display: inline-flex;
+     padding: 2px;
+     flex-direction: row;
+     justify-content: space-between;
+     border: 1px solid black;
+     align-content:flex-start;
+}
+.ans{
+
 }
