@@ -4,7 +4,9 @@ body {
      margin: 0;
      background-color:darkslategrey;
 }
-
+p{
+     margin:0;
+}
 .nav_bar{
      background-color: lavender;
      border-bottom:2px solid black;
@@ -108,7 +110,5 @@ body {
      justify-content: space-between;
      border: 1px solid black;
      align-content:flex-start;
-}
-.ans{
-     margin:0;
+     margin-bottom: 3px;
 }
