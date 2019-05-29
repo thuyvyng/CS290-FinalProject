@@ -98,7 +98,6 @@ p{
 
 .question_container{
      margin-top: 30%;
-     border-top: 2px solid black;  
      display: flex;
      flex-direction:column;
      justify-content: flex-start;
@@ -111,4 +110,12 @@ p{
      border: 1px solid black;
      align-content:flex-start;
      margin-bottom: 3px;
+}
+#edit_button {
+     width: 50px;
+     background-color: #00000020;
+     border: 1px solid black;
+}
+#q_header{
+     border:0;
 }
