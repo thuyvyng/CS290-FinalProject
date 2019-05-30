@@ -1,20 +1,27 @@
+@import "colors.css";
 body {
      font-family:'Segoe UI', 'Helvetica';
+     color:var(--color-txt);
      padding: 0;
      margin: 0;
-     background-color:darkslategrey;
+     background-color:var(--color-bg);
 }
 p{
      margin:0;
 }
-.nav_bar{
-     background-color: lavender;
-     border-bottom:2px solid black;
+button {
+     background-color: var(--color-2);
+     color: var(--color-txt);
+     border: 1px solid var(--color-fg);
+}
+
+.nav_bar {
+     background-color: var(--color-fg);
      flex: 1;
-     display:flex;
+     display: flex;
      justify-content: space-between;
-     font-size:26px;
-     height:auto;
+     font-size: 26px;
+     height: auto;
      padding: 10px;
 }
 #quiz_icon{
@@ -24,8 +31,9 @@ p{
      align-content:center;
 }
 #nav_search_box {
-     background: #00000030;
-     border: 2px solid black;
+     background: var(--color-2);
+     color:var(--color-txt);
+     border: 2px solid var(--color-2);
      min-width:300px;
 }
 #nav_menu_button{
@@ -40,7 +48,7 @@ p{
 .quiz {
      margin: 50px;
      padding: 10px;
-     background-color: lavender;
+     background-color: var(--color-fg);
      display:flex;
      flex-direction: column;
      justify-content: center;
@@ -54,8 +62,8 @@ p{
 }
 .count {
      display: flex;
-     color: black;
-     border: 2px solid black;
+     color: var(--color-1);
+     border: 2px solid var(--color-1);
      font-weight: bold;
      margin: 0;
      max-height: 3ex;
@@ -76,7 +84,8 @@ p{
      margin:0;
 }
 .tag{
-     border:2px solid black;
+     border:2px solid var(--color-3);
+     color:var(--color-3);
      justify-content:flex-start;
      margin: 0 2px 0 2px;
      padding: 2px;
@@ -92,8 +101,6 @@ p{
 }
 .take_quiz_button{
      width:100px;
-     background-color:#00000020;
-     border:1px solid black;
 }
 
 .question_container{
@@ -113,8 +120,6 @@ p{
 }
 #edit_button {
      width: 50px;
-     background-color: #00000020;
-     border: 1px solid black;
 }
 #q_header{
      border:0;
