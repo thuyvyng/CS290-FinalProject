@@ -1,15 +1,9 @@
 :root {
-	/* --color-bg: #b7adad;
-	--color-fg: #d4cdcd;
-	--color-1: #f265c8;
-	--color-2: #9ff8f3;
-	--color-3: #b24ee0;
-	--color-txt: black; */
-
-	--brand-color: #F96161; /*this is the main color of the site */
+	--brand-color: #F96161; 				/*this is the main color of the site */
 	--lightbrand-color: #FF9191;
-	--accent-color: #8DCAEF; /* cute blue */
-	--darkgrey: #B2B2B2;
-	--backgroundgrey: #F2F2F2;
-
+	--accent-color: #8DCAEF; 				/* cute blue */
+	--darkgrey: #B2B2B2; 						/* typically used to outline*/
+	--background-subtle: #F2F2F2;		/* subtle background color */
+	--light-text: white;						/* just incase we dont want it to be white*/
+	--dark-text: black;							/* if we wanted to change all the blacks easily */
 }
