@@ -158,13 +158,13 @@ input.nav_search_box{
 }
 
 /* These are for the styling of the 404 Page */
-.error_oops{
+.error_title{
   margin-top: 10%;
   font-size: 50px;
   text-align: center;
 }
 
-.error_finding{
+.error_description{
   font-size: 24px;
   text-align: center;
 }
