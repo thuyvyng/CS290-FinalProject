@@ -1,27 +1,27 @@
 {
-  "name": "quizicle",
-  "version": "1.0.0",
-  "description": "A website for taking and making quizes. Final project for CS 290 Spring 2019.",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" ",
-    "start": "node server.js",
-    "build": "echo \"Error: no build specified\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/osu-cs290-sp19/final-project-final-project-quizicle.git"
-  },
-  "author": "Toby, Michael, Thuy-Vy, Julian",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/osu-cs290-sp19/final-project-final-project-quizicle/issues"
-  },
-  "homepage": "https://github.com/osu-cs290-sp19/final-project-final-project-quizicle#readme",
-  "dependencies": {
-    "express": "^4.17.1",
-    "express-handlebars": "^3.1.0",
-    "handlebars": "^4.1.2",
-    "nodemon": "^1.19.1"
-  }
+    "name": "quizicle",
+    "version": "1.0.0",
+    "description": "A website for taking and making quizes. Final project for CS 290 Spring 2019.",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" ",
+        "start": "node server.js",
+        "build": "echo \"Error: no build specified\""
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/osu-cs290-sp19/final-project-final-project-quizicle.git"
+    },
+    "author": "Toby, Michael, Thuy-Vy, Julian",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/osu-cs290-sp19/final-project-final-project-quizicle/issues"
+    },
+    "homepage": "https://github.com/osu-cs290-sp19/final-project-final-project-quizicle#readme",
+    "dependencies": {
+        "express": "^4.17.1",
+        "express-handlebars": "^3.1.0",
+        "handlebars": "^4.1.2",
+        "nodemon": "^1.19.1"
+    }
 }

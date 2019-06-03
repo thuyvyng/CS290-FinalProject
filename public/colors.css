@@ -1,8 +1,9 @@
 :root {
-	--color-bg: #b7adad;
-	--color-fg: #d4cdcd;
-	--color-1: #f265c8;
-	--color-2: #9ff8f3;
-	--color-3: #b24ee0;
-	--color-txt: black;
+    --brand-color: #F96161;
+    --lightbrand-color: #FF9191;
+    --accent-color: #8DCAEF;
+    --darkgrey: #B2B2B2; /*outline*/
+    --background-subtle: #F2F2F2;
+    --light-text: white;
+    --dark-text: black;
 }
