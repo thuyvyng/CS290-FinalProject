@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap'); /* Quicksand: Quiz title */
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+:root {
+    --brand-color: #F96161;
+    --lightbrand-color: #FF9191;
+    --accent-color: #8DCAEF;
+    --darkgrey: #B2B2B2; /*outline*/
+    --background-subtle: #F2F2F2;
+    --light-text: white;
+    --dark-text: black;
+
+    --quiz-title-font: 'Quicksand', sans-serif;
+    --body-font: 'Roboto', sans-serif;
+    --button-font: 'Raleway', sans-serif;
+
+}
