@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap'); /* Quicksand: Quiz title */
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Quicksand:500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
 
 :root {
@@ -12,7 +12,7 @@
     --dark-text: black;
 
     --quiz-title-font: 'Quicksand', sans-serif;
-    --body-font: 'Roboto', sans-serif;
+    --body-font: 'Open Sans', sans-serif;
     --button-font: 'Raleway', sans-serif;
 
 }
