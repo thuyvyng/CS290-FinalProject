@@ -13,7 +13,7 @@ app.set('view engine', 'handlebars')
 
 var port = process.env.PORT || 3000
 
-app.all("*/public/:page", function (req, res, next) {
+app.get("*/public/:page", function (req, res, next) {
     var page = req.params.page
     console.log("Redirecting");
     console.log(req.originalUrl)
