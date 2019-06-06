@@ -13,23 +13,14 @@ app.set('view engine', 'handlebars')
 
 var port = process.env.PORT || 3000
 
-app.get('*/style.css', function(req, res) {
-    fs.readFile('public/style.css', function read(err, data) {
-        res.statusCode = 200
-        res.setHeader('Content-Type', 'text/css')
-        res.write(data)
-        res.end()
-    })
+app.all("*/public/:page", function (req, res, next) {
+    var page = req.params.page
+    console.log("Redirecting");
+    console.log(req.originalUrl)
+    res.redirect('/' + page)
 })
 
-app.get('*/global.css', function(req, res) {
-    fs.readFile('public/global.css', function read(err, data) {
-        res.statusCode = 200
-        res.setHeader('Content-Type', 'text/css')
-        res.write(data)
-        res.end()
-    })
-})
+app.use(express.static('public'))
 
 app.get('/', function(req, res) {
     res.status(200).render('home')
