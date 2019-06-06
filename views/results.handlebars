@@ -1,0 +1,15 @@
+<head>
+    <meta charset="utf-8" />
+    <title>Search Results</title>
+    <!-- This 3rd-party stylesheet incorporates SVG icons from Font Awesome: http://fontawesome.com/ -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    {{> header }}
+    <div class="search_result_container">
+        {{#each results}}
+            {{> preview}}
+        {{/each}}
+    </div>
+</body>
