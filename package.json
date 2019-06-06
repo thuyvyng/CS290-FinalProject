@@ -6,7 +6,8 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" ",
         "start": "node server.js",
-        "build": "echo \"Error: no build specified\""
+        "build": "handlebars views/partials/preview.handlebars -f public/previewTemplate.js",
+        "prestart": "npm run build"
     },
     "repository": {
         "type": "git",
