@@ -54,6 +54,10 @@ app.get('/search/:searchTerm', function(req, res, next) {
     next()
 })
 
+app.get('/make/', function(req, res, next) {
+	res.status(200).render('editQuiz');
+});
+
 app.get('*', function(req, res) {
   res.status(404).render('404')
 })
