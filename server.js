@@ -7,6 +7,7 @@ var fs = require('fs')
 
 var MongoClient = require('mongodb').MongoClient
 var database
+var quiz
 
 // Set up Mongo DB parameters
 var mongoDBHost = process.env.MONGODB_HOST
@@ -70,11 +71,23 @@ MongoClient.connect(mongoDBURL, function(err, client) {
         throw err
     }
 
-    mongoDBDatabase = client.db(mongoDBName)
+    database = client.db(mongoDBName)
     console.log("☁️  Connected to database.")
 
     // Once the database is set up, start the server.
     app.listen(port, function() {
         console.log("🤖 Server is listening on port", port, "...\n")
+    })
+
+    console.log(database);
+
+    const col = client.db(dbName).collection('listCollectionsExample1');
+
+    database.people.insertOne({
+        personId: "darth",
+        name: "Darth Vader",
+        age: 53,
+        bio: "Sith Lord",
+        photos: []
     });
-});
+})
