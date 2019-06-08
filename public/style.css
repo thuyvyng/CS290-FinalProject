@@ -71,6 +71,7 @@ input.nav_search_box{
   min-width:300px;
   min-height: 30px;
   border-radius: 10px;
+  padding:0 10px 0 10px;
 }
 
 #nav_menu_button{
@@ -181,4 +182,19 @@ input.nav_search_box{
 .error_description{
   font-size: 24px;
   text-align: center;
+}
+
+/* Styling Search Results*/
+.search_result_container{
+  display:flex-box;
+  flex-direction:column;
+  padding:2px;
+  align-content: space-around;
+  justify-content: flex-start;
+}
+.search_result_preview{
+  background-color: lightgrey;
+  border-radius: 10px;
+  padding:0 20px 0 20px;
+  margin:20px;
 }
