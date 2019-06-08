@@ -94,6 +94,12 @@ input.nav_search_box{
 }
 
 #create_quiz{
+  margin-top: 10px;
+  margin-right: 20px;
+  font-size: 16px;
+  font-family: var(--button-font);
+  color: var(--light-text);
+  text-decoration: none;
   background: none;
   width: 200px;
   text-align:right;
@@ -184,10 +190,16 @@ input.nav_search_box{
 
 /* These are for the styling of the 404 Page */
 .error_title{
-  margin-top: 10%;
+  margin-top: 140px;
   font-size: 50px;
   text-align: center;
   font-family: var(--quiz-title-font)
+}
+
+#error_image {
+    display: block;
+    margin: auto;
+    width: 400px;
 }
 
 .error_description{
