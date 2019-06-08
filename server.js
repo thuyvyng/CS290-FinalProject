@@ -59,16 +59,16 @@ app.get('*', function(req, res) {
 
 // Connect to the database and set the gloabl var so it can be used be the whole
 // middleware stack.
-MongoClient.connect(mongoDBURL, function(err, client) {
-    if (err) {
-        throw err
-    }
-
-    database = client.db(mongoDBName)
-    console.log("☁️  Connected to database.")
+// MongoClient.connect(mongoDBURL, function(err, client) {
+//     if (err) {
+//         throw err
+//     }
+//
+//     database = client.db(mongoDBName)
+//     console.log("☁️  Connected to database.")
 
     // Once the database is set up, start the server.
     app.listen(port, function() {
         console.log("🤖 Server is listening on port", port, "...\n")
     })
-})
+// })
