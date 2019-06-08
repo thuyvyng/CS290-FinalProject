@@ -45,7 +45,7 @@ app.get('/search/:searchTerm', function(req, res, next) {
     next()
 })
 
-app.get('/make/', function(req, res, next) {
+app.get('/create/', function(req, res, next) {
 	res.status(200).render('editQuiz');
 });
 

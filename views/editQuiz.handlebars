@@ -1,53 +1,53 @@
 <head>
-	<meta charset="utf-8"/>
-	<title>Quizicle</title>
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" crossorigin="anonymous">
-	<link rel="stylesheet" href="/style.css">
+    <meta charset="utf-8"/>
+    <title>Quizicle</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
-	{{> header}}
+    {{> header}}
 
-	<div class="edit_quiz">
-		<div class="intro">
-			<div class="edit_title">
-				<input id="quiz-title-input" placeholder="Title..."></input>
-			</div>
-			<div class="edit_description">
-				<textarea id="quiz-description-input" placeholder="Description..."></textarea>
-			</div>
-			<div class="edit-quiz-tags">
-				<div class="tags-par">
-					<p>Tags (separated by space)</p>
-				</div>
-				<div class="edit-quiz-tags-input">
-					<input id="edit-tags-input" placeholder="Tags..."></input>
-				</div>
-			</div> 
+    <div class="edit_quiz">
+        <div class="intro">
+	    <div class="edit_title">
+	        <input id="edit-quiz-title-input" placeholder="Title..."></input>
+	    </div>
+	    <div class="edit_description">
+	        <textarea id="edit-quiz-description-input" placeholder="Description..."></textarea>
+	    </div>
+	    <div class="edit-quiz-tags">
+	        <div class="edit-tags-par">
+	            <p>Tags (separated by space)</p>
 		</div>
-		<div class="study_cards">
-			<div class="edit-questions">
-				<p>Edit Questions</p>
-			</div>
-			<div class="edit-questions-container">
-				<div class="new-flash-card">
-					<button type="button" id="edit-quiz" class="remove-card-button">x</button>
-					<textarea id="quiz-question-input" placeholder="Question..."></textarea>
-					<textarea id="quiz-answer-input" placeholder="Answer..."></textarea>
-				</div>
-				<div class="new-flash-card">
-					<button type="button" id="edit-quiz" class="remove-card-button">x</button>
-					<textarea id="quiz-question-input" placeholder="Question..."></textarea>
-					<textarea id="quiz-answer-input" placeholder="Answer..."></textarea>
-				</div>
-				<div class="add-new-card">
-					<button type="button" id="edit-quiz" class="add-card-button">+ Add Card</button>
-				</div>	
-				<div class="finish-new-quiz">
-					<button type="button" id="edit-quiz" class="cancel-button">Cancel</button>
-					<button type="button" id="edit-quiz" class="done-button">Done</button>
-				</div>
-			</div>
+		<div class="edit-quiz-tags-input">
+		    <input id="edit-tags-input" placeholder="Tags..."></input>
 		</div>
-	</div>
+	    </div> 
+        </div>
+	<div class="edit-study_cards">
+	    <div class="edit-questions">
+	        <p>Edit Questions</p>
+	    </div>
+	    <div class="edit-questions-container">
+		<div class="edit-flash-card">
+		    <button type="button" id="edit-quiz-button" class="clickable" class="remove-card-button">x</button>
+		    <textarea id="edit-quiz-question-input" placeholder="Question..."></textarea>
+		    <textarea id="edit-quiz-answer-input" placeholder="Answer..."></textarea>
+		</div>
+		<div class="edit-flash-card">
+		    <button type="button" id="edit-quiz-button" class="clickable" class="remove-card-button">x</button>
+		    <textarea id="edit-quiz-question-input" placeholder="Question..."></textarea>
+		    <textarea id="edit-quiz-answer-input" placeholder="Answer..."></textarea>
+		</div>
+		<div class="create-new-card">
+		    <button type="button" id="edit-quiz-button" class="clickable" class="add-card-button">+ Add Card</button>
+		</div>	
+		<div class="finish-new-quiz">
+		    <button type="button" id="edit-quiz-button" class="clickable" class="cancel-button">Cancel</button>
+		    <button type="button" id="edit-quiz-button" class="clickable" class="done-button">Done</button>
+		</div>
+	    </div>
+        </div>
+    </div>
 </body>

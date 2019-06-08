@@ -184,8 +184,8 @@ input.nav_search_box{
 }
 
 /* These are for tye styling of the editQuiz page */
-.edit_title #quiz-title-input{         
-	background-color: rgb(223, 223, 223);         
+.edit_title #edit-quiz-title-input{         
+	background-color: var(--lightgrey);         
 	text-decoration: none;         
 	font-size: 21px;         
 	font-weight: initial;     
@@ -201,23 +201,23 @@ input.nav_search_box{
 	outline: none;
 }
 
-.tags-par{
+.edit-tags-par{
 	position: relative;
 	font-style: normal;
 	font-size: 16px;
 	font-weight: 600;
-	color: black;
+	color: var(--dark-text);
 	left: 3%;
 }
 
-.study_cards{
+.edit-study_cards{
 	position: relative;
 	bottom: 29px;
 }
 
 .edit-quiz-tags-input{
 	position: relative;
-	background-color: rgb(223, 223, 223);
+	background-color: var(--lightgrey);
 	left: 3%;
 	margin-bottom: 15px;
 	bottom: 16px;
@@ -232,7 +232,7 @@ input.nav_search_box{
 	font-weight: normal;
 	font-size: 17px;
 	border: none;
-	background-color: rgb(223, 223, 223);
+	background-color: var(--lightgrey);
 	width: 100%;
 	height: 100%;
 }
@@ -245,11 +245,11 @@ input.nav_search_box{
 	margin-bottom: -17px;
 	position: relative;
 	left: 3%;
-	color: black;
+	color: var(--dark-text);
 }
 
 .edit-questions-container{
-	background-color: rgb(223, 223, 223);
+	background-color: var(--lightgrey);
 	position: relative;
 	resize: none;
 	outline: none;
@@ -263,8 +263,8 @@ input.nav_search_box{
 	height: 46px;
 }
 
-#quiz-description-input{
-	background-color: rgb(223, 223, 223);
+#edit-quiz-description-input{
+	background-color: var(--lightgrey);
 	font-size: 17px;
 	font-weight: normal;
 	font-style: normal;
@@ -280,16 +280,16 @@ input.nav_search_box{
 	outline: none;
 }
 
-.new-flash-card #edit-quiz{
-	background-color: white;
+.edit-flash-card #edit-quiz-button{
+	background-color: var(--light-text);
 	color: red;
 	position: relative;
 	left: 2px;
 	bottom: 8px;
 }
 
-.new-flash-card{
-	background-color: white;
+.edit-flash-card{
+	background-color: var(--light-text);
 	border-radius: 6px;
 	position: relative;
 	left: 22px;
@@ -298,7 +298,7 @@ input.nav_search_box{
 	top: 16px;
 }
 
-#quiz-question-input{
+#edit-quiz-question-input{
 	position: relative;
 	left: 0px;
 	top: 3px;
@@ -306,29 +306,29 @@ input.nav_search_box{
 	height: 23px;
 	resize: none;
 	width: 47%;
-	background-color: rgb(223, 223, 223);
-	border-color: white;
+	background-color: var(--lightgrey);
+	border-color: var(--light-text);
 	outline: none;
 }
 
-#quiz-answer-input{
+#edit-quiz-answer-input{
 	position: relative;
 	left: 2%;
 	width: 48%;
 	font-size: 15px;
 	resize: none;
-	background-color: rgb(223, 223, 223);
-	border-color: white;
+	background-color: var(--lightgrey);
+	border-color: var(--light-text);
 	height: 23px;
 	top: 3px;
 	outline: none;
 }
 
-.add-new-card #edit-quiz{
+.create-new-card #edit-quiz-button{
 	border-style: dotted;
 	border-color: var(--darkgrey);
 	border-width: 2px;
-	background-color: rgb(223, 223, 223);
+	background-color: var(--lightgrey);
 	text-align: center;
 	width: 96%;
 	text-decoration: none;
@@ -340,7 +340,7 @@ input.nav_search_box{
 	margin-bottom: 2px;
 }
 
-.finish-new-quiz #edit-quiz{
+.finish-new-quiz #edit-quiz-button{
 	background-color: var(--brand-color);
 	color: var(--light-text);
 	position: relative;
@@ -351,7 +351,7 @@ input.nav_search_box{
 	margin-bottom: 15px;
 }
 
-.add-new-card{
+.create-new-card{
 	position: relative;
 	margin: 17px;
 }
@@ -361,6 +361,6 @@ input.nav_search_box{
 	margin: 17px;
 }
 
-#edit-quiz:hover{
+.clickable:hover{
 	cursor: pointer;
 }
