@@ -49,7 +49,7 @@ app.get('/search/:searchTerm', function(req, res, next) {
     // Search for quiz results in DB
     res.status(200).render('results', {
         title: 'Search Results',
-        search_results: exampleQuiz
+        search_results: [exampleQuiz]
     })
 })
 
