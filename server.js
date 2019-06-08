@@ -23,14 +23,19 @@ app.get("*/public/:page", function (req, res, next) {
 app.use(express.static('public'))
 
 app.get('/', function(req, res) {
-    res.status(200).render('home')
+    res.status(200).render('home', {
+        title: 'Quizicle'
+    })
 })
 
 app.get('/quiz/:quizID', function(req, res, next) {
     var quizID = req.params.quizID
     // Look up quiz ID in DB
     // For now use the example object
-    res.status(200).render('quiz',exampleQuiz)
+    res.status(200).render('quiz', {
+        title: 'Quiz',
+        exampleQuiz
+    })
 })
 
 app.get('/edit/:quizID', function(req, res, next) {
@@ -42,13 +47,18 @@ app.get('/edit/:quizID', function(req, res, next) {
 app.get('/search/:searchTerm', function(req, res, next) {
     var searchTerm = req.params.searchTerm
     // Search for quiz results in DB
-    next()
+    res.status(200).render('results', {
+        title: 'Search Results',
+        search_results: exampleQuiz
+    })
 })
 
 app.get('*', function(req, res) {
-  res.status(404).render('404')
+  res.status(404).render('404', {
+      title: 'Oops!',
+  })
 })
 
 app.listen(port, function() {
-    console.log("🤖 Server is listening on port", port, "...\n")
-});
+    console.log("🤖 Server is listening on port", port, "...\n");
+})
