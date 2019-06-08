@@ -1,5 +1,11 @@
 @import "global.css";
 
+* {
+  padding: 0px;
+  border: 0px;
+  border:0px;
+}
+
 body {
   font-family: var(--body-font);
   padding: 0;
@@ -12,20 +18,17 @@ button {
   background-color: var(--accent-color);
   color: var(--light-text);
   margin: 1px;
-  border: 0px;
   border-radius: 8px;
   font-size: 17px;
 }
 
 ul{
   list-style-type: none;
-  padding: 0px;
 }
 
 li p{
   width: 50%;
   height: 100%;
-  margin: 0px;
   padding: 10px;
   border: 1px solid var(--background-subtle);
 }
@@ -67,19 +70,16 @@ input.nav_search_box{
 #nav_search_box {
   background: var(--lightbrand-color);
   color: var(--light-text);
-  border: 0px;
   min-width:300px;
   min-height: 30px;
   border-radius: 10px;
 }
 
 #nav_menu_button{
-  border:0;
   background: none;
 }
 
 #nav_search_button {
-  border: 0;
   color: var(--light-text);
   background: none;
 }
@@ -121,7 +121,6 @@ input.nav_search_box{
 }
 
 .quiz_top{
-  margin: 0px;
   padding: 50px;
   border-radius: 0px;
   text-align: bottom;
@@ -132,9 +131,6 @@ input.nav_search_box{
   display: flex;
   justify-content: space-between;
   width: auto;
-  margin: 0px;
-  padding: 0px;
-  border:0px;
 }
 
 .card {
