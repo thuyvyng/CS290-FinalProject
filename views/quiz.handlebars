@@ -13,19 +13,21 @@
     <div class="content_container quiz_header">
         <h3 class="quiz_title">{{name}}</h3>
         <p class="num_count">{{card_count}} cards</p>
-        <p class="description">{{description}}</p>
+        <p class="quiz_description">{{description}}</p>
         <button type="button" class="practice_button"> Practice</button>
     </div>
 
-    <div class="card_header">
-        <h4 id="card_title">Questions</h4>
+    <div class="content_container">
+        <h4>Questions</h4>
         <button id="edit_button">Edit</button>
     </div>
 
-    <ul class="card_container">
-      {{#each cards}}
-        {{> card}}
-      {{/each}}
-    </ul>
+    <div class="full_width_contrast_container">
+        <ul class="content_container card_container">
+          {{#each cards}}
+            {{> card}}
+          {{/each}}
+        </ul>
+    </div>
 
 </body>
