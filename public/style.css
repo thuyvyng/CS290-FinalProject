@@ -1,7 +1,7 @@
 @import "global.css";
 
 ::placeholder{
-  color: white;
+  color: var(--light-text);
 }
 * {
   padding: 0px;
@@ -39,7 +39,7 @@ li p{
 }
 
 input.nav_search_box{
-  color: white;
+  color: var(--light-text);
 }
 
 #logo{
