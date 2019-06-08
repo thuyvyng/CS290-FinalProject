@@ -43,11 +43,19 @@ input.nav_search_box{
 }
 
 #logo{
+  height:40px;
   float:left;
 }
 
 #logo_link{
+  font-family: var(--button-font);
   width: 200px;
+  color: var(--light-text);
+  text-decoration: none;
+}
+
+#brand_name{
+  margin-top: 6px;
 }
 
 #card_title{
@@ -61,18 +69,13 @@ input.nav_search_box{
   right: 50px;
 }
 
-#logo{
-  height:40px;
-}
-
 #home_page_pic{
-  padding-top: 50px;
+  margin-top: 120px;
+  margin-bottom: 60px;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
-  max-width: 200px;
-
+  width: 600px;
 }
 
 #nav_search{
