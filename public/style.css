@@ -4,6 +4,8 @@
   padding: 0px;
   border: 0px;
   border:0px;
+  margin-block-start:0px;
+  margin-block-end:0px;
 }
 
 body {
@@ -95,12 +97,14 @@ input.nav_search_box{
   padding: 10px;
 }
 
-.count p{
-  padding:2px;
+.content_container {
+  margin: 50px;
 }
 
-.count {
-  display: flex;
+.num_count {
+  position: absolute;
+  top: 0px;
+  right: 0px;
   color: var(--darkgrey);
   font-weight: bold;
 }
@@ -109,28 +113,18 @@ input.nav_search_box{
   width:100px;
 }
 
-.quiz {
-  display:flex;
-  flex-direction: column;
-  height:auto;
-}
-
 .quiz_title{
   font-family: var(--quiz-title-font);
   font-size: 35px;
 }
 
 .quiz_top{
-  padding: 50px;
   border-radius: 0px;
-  text-align: bottom;
   background: var(--light-text);
 }
 
 .quiz_header {
-  display: flex;
-  justify-content: space-between;
-  width: auto;
+    position: relative;
 }
 
 .card {
