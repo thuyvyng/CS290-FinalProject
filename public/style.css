@@ -1,5 +1,8 @@
 @import "global.css";
 
+::placeholder{
+  color: white;
+}
 * {
   padding: 0px;
   border: 0px;
@@ -36,19 +39,26 @@ li p{
 }
 
 input.nav_search_box{
-  color: var(--light-text);
+  color: white;
 }
 
-#main-question{
+#logo{
+  float:left;
+}
+
+#logo_link{
+  width: 200px;
+}
+
+#card_title{
   font-size: 24px;
   font-family: var(--button-font)
 }
 
 #edit_button {
   width: 50px;
-  float: right;
-  height: 20px;
-  margin-left: 20px;
+  position: absolute;
+  right: 50px;
 }
 
 #logo{
@@ -77,8 +87,10 @@ input.nav_search_box{
   border-radius: 10px;
 }
 
-#nav_menu_button{
+#create_quiz{
   background: none;
+  width: 200px;
+  text-align:right;
 }
 
 #nav_search_button {
@@ -109,8 +121,8 @@ input.nav_search_box{
   font-weight: bold;
 }
 
-.take_quiz_button{
-  width:100px;
+.practice_button{
+  width:90px;
 }
 
 .quiz_title{
@@ -118,10 +130,6 @@ input.nav_search_box{
   font-size: 35px;
 }
 
-.quiz_top{
-  border-radius: 0px;
-  background: var(--light-text);
-}
 
 .quiz_header {
     position: relative;
@@ -139,21 +147,17 @@ input.nav_search_box{
   margin-bottom: 15px;
 }
 
-.question-start{
-  width: 100%;
-  padding: 0px;
+.card_header{
   padding-left: 50px;
-  margin: 0px;
   display: flex;
-  align-items: center;
+  position: relative;
   background: var(--light-text);
 }
 
-.question_container{
+.card_container{
   padding: 15px;
   padding-left: 50px;
   padding-right: 50px;
-  margin: 0px;
   background: var(--background-subtle);
   display: flex;
   flex-direction: column;
