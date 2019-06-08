@@ -1,0 +1,50 @@
+{
+    "_id": "1",
+    "name": "State Capitals",
+    "description": "The capitals of all 50 states in the U.S.",
+    "creation_date": "1559404138",
+    "tags": [
+        "Geography", "US", "Trivia"
+    ],
+    "card_count": "13",
+    "cards": [{
+        "prompt": "Alabama",
+        "answer": "Montgomery"
+    }, {
+        "prompt": "Alaska",
+        "answer": "Juneau"
+    }, {
+        "prompt": "Arizona",
+        "answer": "Phoenix"
+    }, {
+        "prompt": "Arkansas",
+        "answer": "Little Rock"
+    }, {
+        "prompt": "California",
+        "answer": "Sacramento"
+    }, {
+        "prompt": "Colorado",
+        "answer": "Denver"
+    }, {
+        "prompt": "Connecticut",
+        "answer": "Hartford"
+    }, {
+        "prompt": "Delaware",
+        "answer": "Dover"
+    }, {
+        "prompt": "Florida",
+        "answer": "Tallahassee"
+    }, {
+        "prompt": "Georgia",
+        "answer": "Atlanta"
+    }, {
+        "prompt": "Hawaii",
+        "answer": "Honolulu"
+    }, {
+        "prompt": "Idaho",
+        "answer": "Boise"
+    }, {
+        "prompt": "Illinois",
+        "answer": "Springfield"
+    }]
+}
