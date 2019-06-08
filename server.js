@@ -78,16 +78,4 @@ MongoClient.connect(mongoDBURL, function(err, client) {
     app.listen(port, function() {
         console.log("🤖 Server is listening on port", port, "...\n")
     })
-
-    console.log(database);
-
-    const col = client.db(dbName).collection('listCollectionsExample1');
-
-    database.people.insertOne({
-        personId: "darth",
-        name: "Darth Vader",
-        age: 53,
-        bio: "Sith Lord",
-        photos: []
-    });
 })
