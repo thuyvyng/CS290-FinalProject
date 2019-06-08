@@ -1,11 +1,7 @@
 var search_box = document.querySelector('#nav_search_box');
-search_box.addEventListener('input', search);
+search_box.addEventListener('change', search);
 function search(event){
-    searches = require('../exampleQuiz.json');
-    for(var i=0;i<searches.length;i++){
-        if((searches[i].name.includes(search_box.value)||(searches[i].description.includes(search_box.value))){
-            
-        }
-    }
-
+    var url='/search/'+search_box.value.replace(/\s+/g, '').toLowerCase();
+    console.log('URL requested:', url);
+    window.location.replace(url);
 }

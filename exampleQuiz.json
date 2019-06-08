@@ -1,12 +1,12 @@
 {
-    "_id": "1923",
+    "_id": "1",
     "name": "State Capitals",
     "description": "The capitals of all 50 states in the U.S.",
     "creation_date": "1559404138",
     "tags": [
         "Geography", "US", "Trivia"
     ],
-    "card_count": "2",
+    "card_count": "13",
     "cards": [{
         "prompt": "Alabama",
         "answer": "Montgomery"

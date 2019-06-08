@@ -6,8 +6,7 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" ",
         "start": "node server.js",
-        "build": "handlebars views/partials/preview.handlebars -f public/previewTemplate.js",
-        "prestart": "npm run build"
+        "dev": "nodemon server.js"
     },
     "repository": {
         "type": "git",
@@ -23,6 +22,7 @@
         "express": "^4.17.1",
         "express-handlebars": "^3.1.0",
         "handlebars": "^4.1.2",
+        "mongodb": "^3.2.7",
         "nodemon": "^1.19.1"
     }
 }
