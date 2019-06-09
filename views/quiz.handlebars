@@ -11,36 +11,24 @@
 
     {{> header}}
 
-    <div class="quiz">
-        <div class="quiz_top">
-            <div class="quiz_header">
-                <div class="quiz_title">
-                    <h3>{{name}}</h3>
-                </div>
-                <div class="count">
-                    <p class="num_count">{{card_count}} cards</p>
-                </div>
-            </div>
-            <div class="quiz_info">
-                <p class="description">{{description}}</p>
-            </div>
-            <button type="button" class="take_quiz_button">Take Quiz</button>
-        </div>
-
-        <div class="question-container">
-            <div class="question-start">
-                <h4 id="main-question">Questions</h4>
-                <button id="edit_button">Edit</button>
-            </div>
-
-            <ul class="question_container">
-
-                {{#each cards}}
-                  {{> card}}
-                {{/each}}
-
-            </ul>
-
-        </div>
+    <div class="content_container quiz_header">
+        <h3 class="quiz_title">{{name}}</h3>
+        <p class="num_count">{{card_count}} cards</p>
+        <p class="quiz_description">{{description}}</p>
+        <button type="button" class="practice_button"> Practice</button>
     </div>
+
+    <div class="content_container">
+        <h4>Questions</h4>
+        <button id="edit_button">Edit</button>
+    </div>
+
+    <div class="full_width_contrast_container">
+        <ul class="content_container card_container">
+          {{#each cards}}
+            {{> card}}
+          {{/each}}
+        </ul>
+    </div>
+
 </body>
