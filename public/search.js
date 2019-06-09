@@ -6,3 +6,4 @@ function search(event){
     search_box.value='';
     window.location.assign(url);
 }
+ 
