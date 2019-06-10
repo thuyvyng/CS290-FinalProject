@@ -46,10 +46,12 @@ app.get('/edit/:quizID', function(req, res, next) {
 app.get('/search/:searchTerm', function(req, res, next) {
     var searchTerm = req.params.searchTerm
 
-    // Search for quiz results in DB
+    var results = require("./exampleQuizzes.json")
+    // Replace with database function ^^^
+
     res.status(200).render('results', {
         title: 'Search Results',
-        search_results: [exampleQuiz]
+        search_results: results
     })
 })
 
