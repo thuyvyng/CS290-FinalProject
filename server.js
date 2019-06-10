@@ -26,10 +26,10 @@ app.get('/quiz/:quizID', function(req, res, next) {
 
     lookupQuiz(quizID, function(quiz) {
         if (quiz) {
-    res.status(200).render('quiz', {
-        title: 'Quiz',
-        exampleQuiz
-    })
+            quiz.title = quiz.name + " - Quizicle"
+
+            console.log(quiz);
+            res.status(200).render('quiz', quiz)
         } else {
             next()
         }
