@@ -1,44 +1,36 @@
-<head>
-    <meta charset="utf-8" />
-    <title>Quizicle</title>
-    <!-- This 3rd-party stylesheet incorporates SVG icons from Font Awesome: http://fontawesome.com/ -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" crossorigin="anonymous">
-    <link rel="stylesheet" href="/public/style.css">
-</head>
-
 <body>
     {{> header}}
 
     <div class="edit_quiz">
-    	<div class="edit_intro">
-	    <input placeholder="Title..."></input>
-	    <textarea placeholder="Description..."></textarea>
-	    <div class="edit_quiz_tags">
-	        <p>Tags (separated by space)</p>
-		<input placeholder="Tags..."></input>
-	    </div> 
+        <div class="edit_intro">
+            <input placeholder="Title..."></input>
+            <textarea placeholder="Description..."></textarea>
+            <div class="edit_quiz_tags">
+                <p>Tags (separated by space)</p>
+                <input placeholder="Tags..."></input>
+            </div>
         </div>
-	<div class="edit_question">
-	    <p>Edit Questions</p>
-	</div>
-	<div class="edit_questions_container">
-	    <div class="edit_flash_card">
-	        <button type="button" class="remove_card_button" class="clickable">x</button>
-		<textarea class="edit_quiz_question_input" placeholder="Question..."></textarea>
-		<textarea class="edit_quiz_answer_input" placeholder="Answer..."></textarea>
-	    </div>
-	    <div class="edit_flash_card">
-		<button type="button" class="remove_card_button" class="clickable">x</button>
-		<textarea class="edit_quiz_question_input" placeholder="Question..."></textarea>
-		<textarea class="edit_quiz_answer_input" placeholder="Answer..."></textarea>
-	    </div>
-	    <div class="create_new_card">
-		<button type="button" class="clickable">+ Add Card</button>
-	    </div>	
-	    <div class="finish_new_quiz">
-	        <button type="button" id="cancel_button" class="clickable">Cancel</button>
-		<button type="button" id="done_button" class="clickable">Done</button>
-	    </div>
+        <div class="edit_question">
+            <p>Edit Questions</p>
+        </div>
+        <div class="edit_questions_container">
+            <div class="edit_flash_card">
+                <button type="button" class="remove_card_button" class="clickable">x</button>
+                <textarea class="edit_quiz_question_input" placeholder="Question..."></textarea>
+                <textarea class="edit_quiz_answer_input" placeholder="Answer..."></textarea>
+            </div>
+            <div class="edit_flash_card">
+                <button type="button" class="remove_card_button" class="clickable">x</button>
+                <textarea class="edit_quiz_question_input" placeholder="Question..."></textarea>
+                <textarea class="edit_quiz_answer_input" placeholder="Answer..."></textarea>
+            </div>
+            <div class="create_new_card">
+                <button type="button" class="clickable">+ Add Card</button>
+            </div>
+            <div class="finish_new_quiz">
+                <button type="button" id="cancel_button" class="clickable">Cancel</button>
+                <button type="button" id="done_button" class="clickable">Done</button>
+            </div>
         </div>
     </div>
 </body>

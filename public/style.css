@@ -1,177 +1,176 @@
 @import "global.css";
-
-::placeholder{
-  color: var(--light-text);
+::placeholder {
+    color: var(--light-text);
 }
 
 * {
-  padding: 0px;
-  border: 0px;
-  border:0px;
-  margin-block-start:0px;
-  margin-block-end:0px;
-  font-family: var(--body-font);
+    padding: 0px;
+    border: 0px;
+    border: 0px;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    font-family: var(--body-font);
 }
 
 body {
-  font-family: var(--body-font);
-  padding: 0;
-  margin: 0;
-  color: var(--dark-text);
+    font-family: var(--body-font);
+    padding: 0;
+    margin: 0;
+    color: var(--dark-text);
 }
 
 button {
-  font-family: var(--button-font);
-  background-color: var(--accent-color);
-  color: var(--light-text);
-  margin: 1px;
-  border-radius: 8px;
-  font-size: 17px;
+    font-family: var(--button-font);
+    background-color: var(--accent-color);
+    color: var(--light-text);
+    margin: 1px;
+    border-radius: 8px;
+    font-size: 17px;
 }
 
-ul{
-  list-style-type: none;
+ul {
+    list-style-type: none;
 }
 
-h4{
-  margin-top: 30px;
-  margin-bottom: 30px;
-  font-size: 24px;
-  font-family: var(--button-font)
+h4 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-family: var(--button-font)
 }
 
-li p{
-  width: 50%;
-  height: 100%;
-  padding: 10px;
+li p {
+    width: 50%;
+    height: 100%;
+    padding: 10px;
 }
 
-input.nav_search_box{
-  color: var(--light-text);
+input.nav_search_box {
+    color: var(--light-text);
 }
 
-#logo{
-  height:40px;
-  float:left;
+#logo {
+    height: 40px;
+    float: left;
 }
 
-#logo_link{
-  width: 200px;
-  color: var(--light-text);
-  text-decoration: none;
+#logo_link {
+    width: 200px;
+    color: var(--light-text);
+    text-decoration: none;
 }
 
-#brand_name{
-  font-family: var(--button-font);
-  margin-top: 6px;
+#brand_name {
+    font-family: var(--button-font);
+    margin-top: 6px;
 }
 
 #edit_button {
-  width: 80px;
-  position: absolute;
-  top: 4px;
-  right: 50px;
+    width: 80px;
+    position: absolute;
+    top: 4px;
+    right: 50px;
 }
 
-#home_page_pic{
-  margin-top: 120px;
-  margin-bottom: 60px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 600px;
+#home_page_pic {
+    margin-top: 120px;
+    margin-bottom: 60px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 600px;
 }
 
 #nav_search_box {
-  padding-left: 20px;
-  padding-right: 20px;
-  background: var(--lightbrand-color);
-  font-size: 16px;
-  color: var(--light-text);
-  min-width:300px;
-  min-height: 30px;
-  border-radius: 10px;
-  padding:0 10px 0 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background: var(--lightbrand-color);
+    font-size: 16px;
+    color: var(--light-text);
+    min-width: 300px;
+    min-height: 30px;
+    border-radius: 10px;
+    padding: 0 10px 0 10px;
 }
 
-#create_quiz{
-  margin-top: 10px;
-  margin-right: 20px;
-  font-size: 16px;
-  font-family: var(--button-font);
-  color: var(--light-text);
-  text-decoration: none;
-  background: none;
-  width: 200px;
-  text-align:right;
+#create_quiz {
+    margin-top: 10px;
+    margin-right: 20px;
+    font-size: 16px;
+    font-family: var(--button-font);
+    color: var(--light-text);
+    text-decoration: none;
+    background: none;
+    width: 200px;
+    text-align: right;
 }
 
 #nav_search_button {
-  color: var(--light-text);
-  background: none;
+    color: var(--light-text);
+    background: none;
 }
 
 .nav_bar {
-  background-color: var(--brand-color);
-  color: var(--light-text);
-  flex: 1;
-  display: flex;
-  justify-content: space-between;
-  font-size: 26px;
-  height: auto;
-  padding: 10px;
+    background-color: var(--brand-color);
+    color: var(--light-text);
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    font-size: 26px;
+    height: auto;
+    padding: 10px;
 }
 
 .content_container {
-  padding-left: 50px;
-  padding-right: 50px;
-  position: relative;
-  max-width: var(--max-content-width);
-  margin: auto;
+    padding-left: 50px;
+    padding-right: 50px;
+    position: relative;
+    max-width: var(--max-content-width);
+    margin: auto;
 }
 
 .full_width_contrast_container {
-  background: var(--background-subtle);
-  width: 100%;
+    background: var(--background-subtle);
+    width: 100%;
 }
 
 .num_count {
-  font-family: var(--quiz-title-font);
-  font-size: 20px;
-  position: absolute;
-  top: 0px;
-  right: 50px;
-  color: var(--darkgrey);
-  font-weight: bold;
+    font-family: var(--quiz-title-font);
+    font-size: 20px;
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    color: var(--darkgrey);
+    font-weight: bold;
 }
 
 .quiz_description {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
-.practice_button{
-  height: 40px;
-  width:90px;
-  margin-bottom: 40px;
+.practice_button {
+    height: 40px;
+    width: 90px;
+    margin-bottom: 40px;
 }
 
-.quiz_title{
-  font-family: var(--quiz-title-font);
-  font-size: 35px;
-  margin-bottom: 20px;
+.quiz_title {
+    font-family: var(--quiz-title-font);
+    font-size: 35px;
+    margin-bottom: 20px;
 }
 
 .quiz_header {
-  position: relative;
-  margin-top: 40px;
+    position: relative;
+    margin-top: 40px;
 }
 
 .card {
-  padding: 10px;
-  display: inline-flex;
-  background: var(--light-text);
-  margin-bottom: 15px;
-  border-radius: 10px;
+    padding: 10px;
+    display: inline-flex;
+    background: var(--light-text);
+    margin-bottom: 15px;
+    border-radius: 10px;
 }
 
 .card-divider {
@@ -181,26 +180,27 @@ input.nav_search_box{
     background-color: var(--background-subtle);
 }
 
-.card_container{
-  padding-top: 15px;
-  background: var(--background-subtle);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.card_container {
+    padding-top: 15px;
+    background: var(--background-subtle);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 /* These are for the styling of the 404 Page */
-.error_title{
-  margin-top: 140px;
-  font-size: 50px;
-  text-align: center;
-  font-family: var(--quiz-title-font)
+
+.error_title {
+    margin-top: 140px;
+    font-size: 50px;
+    text-align: center;
+    font-family: var(--quiz-title-font)
 }
 
-.error_description{
-  margin-top: 20px;
-  font-size: 24px;
-  text-align: center;
+.error_description {
+    margin-top: 20px;
+    font-size: 24px;
+    text-align: center;
 }
 
 #error_image {
@@ -211,7 +211,7 @@ input.nav_search_box{
 
 /* These are for tye styling of the editQuiz page */
 
-.edit_intro{
+.edit_intro {
     position: relative;
     width: 49%;
     margin-top: 23px;
@@ -220,7 +220,7 @@ input.nav_search_box{
     left: 3%;
 }
 
-.edit_intro > input{
+.edit_intro>input {
     background-color: var(--background-subtle);
     text-decoration: none;
     font-size: 21px;
@@ -233,21 +233,21 @@ input.nav_search_box{
     outline: none;
 }
 
-.edit_quiz_tags{
+.edit_quiz_tags {
     position: relative;
     height: 77px;
     width: 63%;
     bottom: 14px;
 }
 
-.edit_quiz_tags > p{
+.edit_quiz_tags>p {
     font-size: 20px;
     font-weight: bold;
     position: relative;
     bottom: -18px;
 }
 
-.edit_quiz_tags > input{
+.edit_quiz_tags>input {
     position: relative;
     margin-bottom: 15px;
     bottom: 16px;
@@ -262,7 +262,7 @@ input.nav_search_box{
     background-color: var(--background-subtle);
 }
 
-.edit_question{
+.edit_question {
     font-size: 21px;
     font-weight: bold;
     font-style: normal;
@@ -273,7 +273,7 @@ input.nav_search_box{
     color: var(--dark-text);
 }
 
-.edit_questions_container{
+.edit_questions_container {
     background-color: var(--background-subtle);
     position: relative;
     resize: none;
@@ -282,7 +282,7 @@ input.nav_search_box{
     width: 99%;
 }
 
-.edit_intro > textarea{
+.edit_intro>textarea {
     word-wrap: break-word;
     white-space: pre-wrap;
     height: 46px;
@@ -297,7 +297,7 @@ input.nav_search_box{
     outline: none;
 }
 
-.edit_flash_card .remove_card_button{
+.edit_flash_card .remove_card_button {
     background-color: var(--light-text);
     color: red;
     position: relative;
@@ -305,7 +305,7 @@ input.nav_search_box{
     bottom: 5px;
 }
 
-.edit_flash_card{
+.edit_flash_card {
     background-color: var(--light-text);
     border-radius: 6px;
     position: relative;
@@ -315,7 +315,7 @@ input.nav_search_box{
     top: 16px;
 }
 
-.edit_quiz_question_input{
+.edit_quiz_question_input {
     position: relative;
     left: 0px;
     top: 3px;
@@ -328,7 +328,7 @@ input.nav_search_box{
     outline: none;
 }
 
-.edit_quiz_answer_input{
+.edit_quiz_answer_input {
     position: relative;
     left: 2%;
     width: 48%;
@@ -341,7 +341,7 @@ input.nav_search_box{
     outline: none;
 }
 
-.create_new_card .clickable{
+.create_new_card .clickable {
     border-style: dotted;
     border-color: var(--darkgrey);
     border-width: 2px;
@@ -357,7 +357,7 @@ input.nav_search_box{
     margin-bottom: 2px;
 }
 
-.finish_new_quiz .clickable{
+.finish_new_quiz .clickable {
     background-color: var(--brand-color);
     color: var(--light-text);
     position: relative;
@@ -368,36 +368,38 @@ input.nav_search_box{
     margin-bottom: 15px;
 }
 
-.create_new_card{
+.create_new_card {
     position: relative;
     margin: 17px;
 }
 
-.finish_new_quiz{
+.finish_new_quiz {
     position: relative;
     margin: 17px;
 }
 
-.clickable:hover{
+.clickable:hover {
     cursor: pointer;
 }
 
-::placeholder{
-	font-weight: bold;
-	color: var(--darkgrey);
+::placeholder {
+    font-weight: bold;
+    color: var(--darkgrey);
 }
 
 /* Styling Search Results*/
-.search_result_container{
-  display:flex-box;
-  flex-direction:column;
-  padding:2px;
-  align-content: space-around;
-  justify-content: flex-start;
+
+.search_result_container {
+    display: flex-box;
+    flex-direction: column;
+    padding: 2px;
+    align-content: space-around;
+    justify-content: flex-start;
 }
-.search_result_preview{
-  background-color: lightgrey;
-  border-radius: 10px;
-  padding:0 20px 0 20px;
-  margin:20px;
+
+.search_result_preview {
+    background-color: lightgrey;
+    border-radius: 10px;
+    padding: 0 20px 0 20px;
+    margin: 20px;
 }

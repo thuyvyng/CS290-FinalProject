@@ -61,8 +61,8 @@ app.get('/search/:searchTerm', function(req, res, next) {
     })
 })
 
-app.get('/create/', function(req, res, next) {
-	res.status(200).render('editQuiz');
+app.get('/create', function(req, res, next) {
+    res.status(200).render('editQuiz');
 });
 
 app.get('*', function(req, res) {
