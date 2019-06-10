@@ -112,8 +112,6 @@ async function lookupQuiz(quizID, completion) {
     database.collection(quizCollection).find(query).toArray(function(err, result) {
         if (err) throw err;
 
-        console.log(result[0].cards.length);
-
         completion(result[0])
     });
 }
