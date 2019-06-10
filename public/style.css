@@ -242,6 +242,8 @@ input.nav_search_box{
 .edit_quiz_tags > p{
     font-size: 20px;
     font-weight: bold;
+    position: relative;
+    bottom: -18px;
 }
 
 .edit_quiz_tags > input{
@@ -255,6 +257,7 @@ input.nav_search_box{
     font-weight: normal;
     font-size: 17px;
     border: none;
+    top: 19px;
     background-color: var(--background-subtle);
 }
 
@@ -298,7 +301,7 @@ input.nav_search_box{
     color: red;
     position: relative;
     left: 2px;
-    bottom: 8px;
+    bottom: 5px;
 }
 
 .edit_flash_card{
@@ -376,4 +379,9 @@ input.nav_search_box{
 
 .clickable:hover{
     cursor: pointer;
+}
+
+::placeholder{
+	font-weight: bold;
+	color: var(--darkgrey);
 }
