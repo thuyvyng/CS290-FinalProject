@@ -16,7 +16,9 @@ var port = process.env.PORT || 3000
 app.use(express.static('public'))
 
 app.get('/', function(req, res) {
-    res.status(200).render('home')
+    res.status(200).render('home', {
+        title: 'Quizicle'
+    })
 })
 
 app.get('/quiz/:quizID', function(req, res, next) {
@@ -24,7 +26,10 @@ app.get('/quiz/:quizID', function(req, res, next) {
 
     lookupQuiz(quizID, function(quiz) {
         if (quiz) {
-            res.status(200).render('quiz', quiz)
+    res.status(200).render('quiz', {
+        title: 'Quiz',
+        exampleQuiz
+    })
         } else {
             next()
         }
@@ -42,7 +47,10 @@ app.get('/search/:searchTerm', function(req, res, next) {
     var searchTerm = req.params.searchTerm
 
     // Search for quiz results in DB
-    next()
+    res.status(200).render('results', {
+        title: 'Search Results',
+        search_results: [exampleQuiz]
+    })
 })
 
 ///SECTION: API Functions
@@ -63,7 +71,9 @@ app.get('/api/recent/:count', function(req, res, next) {
 })
 
 app.get('*', function(req, res) {
-  res.status(404).render('404')
+  res.status(404).render('404', {
+      title: 'Oops!',
+  })
 })
 
 function startServer() {
