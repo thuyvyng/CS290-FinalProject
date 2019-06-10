@@ -1,29 +1,24 @@
 <head>
+    <base href="/">
     <meta charset="utf-8" />
     <title>Quizicle</title>
     <!-- This 3rd-party stylesheet incorporates SVG icons from Font Awesome: http://fontawesome.com/ -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" crossorigin="anonymous">
-    <link rel="stylesheet" href="/public/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     {{> header}}
 
-    <div class="quiz">
-        <div class="quiz_top">
-            <img id = "home_page_pic" src="assets/banner.png" />
-        </div>
+    <img id = "home_page_pic" src="assets/banner.png" />
 
-        <div class="question-container">
-            <div class="question-start">
-                <h4 id="main-question"> Featured Quizzes</h4>
-            </div>
-
-            <ul class="question_container">
-
-            </ul>
-
-        </div>
+    <div class="content_container">
+        <h4>Featured Quizzes</h4>
     </div>
+    <div class="full_width_contrast_container">
+        <ul class="card_container">
+        </ul>
+    </div>
+
 </body>

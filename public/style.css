@@ -1,5 +1,18 @@
 @import "global.css";
 
+::placeholder{
+  color: var(--light-text);
+}
+
+* {
+  padding: 0px;
+  border: 0px;
+  border:0px;
+  margin-block-start:0px;
+  margin-block-end:0px;
+  font-family: var(--body-font);
+}
+
 body {
   font-family: var(--body-font);
   padding: 0;
@@ -12,74 +25,87 @@ button {
   background-color: var(--accent-color);
   color: var(--light-text);
   margin: 1px;
-  border: 0px;
   border-radius: 8px;
   font-size: 17px;
 }
 
 ul{
   list-style-type: none;
-  padding: 0px;
+}
+
+h4{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 24px;
+  font-family: var(--button-font)
 }
 
 li p{
   width: 50%;
   height: 100%;
-  margin: 0px;
   padding: 10px;
-  border: 1px solid var(--background-subtle);
 }
 
 input.nav_search_box{
   color: var(--light-text);
 }
 
-#main-question{
-  font-size: 24px;
-  font-family: var(--button-font)
+#logo{
+  height:40px;
+  float:left;
+}
+
+#logo_link{
+  width: 200px;
+  color: var(--light-text);
+  text-decoration: none;
+}
+
+#brand_name{
+  font-family: var(--button-font);
+  margin-top: 6px;
 }
 
 #edit_button {
-  width: 50px;
-  float: right;
-  height: 20px;
-  margin-left: 20px;
-}
-
-#logo{
-  height:40px;
+  width: 80px;
+  position: absolute;
+  top: 4px;
+  right: 50px;
 }
 
 #home_page_pic{
-  padding-top: 50px;
+  margin-top: 120px;
+  margin-bottom: 60px;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
-  max-width: 200px;
-
-}
-
-#nav_search{
-  align-content:center;
+  width: 600px;
 }
 
 #nav_search_box {
+  padding-left: 20px;
+  padding-right: 20px;
   background: var(--lightbrand-color);
+  font-size: 16px;
   color: var(--light-text);
-  border: 0px;
   min-width:300px;
   min-height: 30px;
   border-radius: 10px;
 }
 
-#nav_menu_button{
-  border:0;
+#create_quiz{
+  margin-top: 10px;
+  margin-right: 20px;
+  font-size: 16px;
+  font-family: var(--button-font);
+  color: var(--light-text);
+  text-decoration: none;
   background: none;
+  width: 200px;
+  text-align:right;
 }
 
 #nav_search_button {
-  border: 0;
   color: var(--light-text);
   background: none;
 }
@@ -95,75 +121,67 @@ input.nav_search_box{
   padding: 10px;
 }
 
-.count p{
-  padding:2px;
+.content_container {
+  padding-left: 50px;
+  padding-right: 50px;
+  position: relative;
+  max-width: var(--max-content-width);
+  margin: auto;
 }
 
-.count {
-  display: flex;
+.full_width_contrast_container {
+  background: var(--background-subtle);
+  width: 100%;
+}
+
+.num_count {
+  font-family: var(--quiz-title-font);
+  font-size: 20px;
+  position: absolute;
+  top: 0px;
+  right: 50px;
   color: var(--darkgrey);
   font-weight: bold;
 }
 
-.take_quiz_button{
-  width:100px;
+.quiz_description {
+  margin-bottom: 20px;
 }
 
-.quiz {
-  display:flex;
-  flex-direction: column;
-  height:auto;
+.practice_button{
+  height: 40px;
+  width:90px;
+  margin-bottom: 40px;
 }
 
 .quiz_title{
   font-family: var(--quiz-title-font);
   font-size: 35px;
-}
-
-.quiz_top{
-  margin: 0px;
-  padding: 50px;
-  border-radius: 0px;
-  text-align: bottom;
-  background: var(--light-text);
+  margin-bottom: 20px;
 }
 
 .quiz_header {
-  display: flex;
-  justify-content: space-between;
-  width: auto;
-  margin: 0px;
-  padding: 0px;
-  border:0px;
+  position: relative;
+  margin-top: 40px;
 }
 
 .card {
-  background: var(--light-text);
+  padding: 10px;
   display: inline-flex;
-  padding: 20px;
-  flex-direction: row;
-  justify-content: space-between;
-  align-content:flex-start;
-  margin: 0px;
-  padding: 0px;
-  margin-bottom: 15px;
-}
-
-.question-start{
-  width: 100%;
-  padding: 0px;
-  padding-left: 50px;
-  margin: 0px;
-  display: flex;
-  align-items: center;
   background: var(--light-text);
+  margin-bottom: 15px;
+  border-radius: 10px;
 }
 
-.question_container{
-  padding: 15px;
-  padding-left: 50px;
-  padding-right: 50px;
-  margin: 0px;
+.card-divider {
+    width: 2px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: var(--background-subtle);
+}
+
+.card_container{
+  padding-top: 15px;
   background: var(--background-subtle);
   display: flex;
   flex-direction: column;
@@ -172,15 +190,22 @@ input.nav_search_box{
 
 /* These are for the styling of the 404 Page */
 .error_title{
-  margin-top: 10%;
+  margin-top: 140px;
   font-size: 50px;
   text-align: center;
   font-family: var(--quiz-title-font)
 }
 
 .error_description{
+  margin-top: 20px;
   font-size: 24px;
   text-align: center;
+}
+
+#error_image {
+    display: block;
+    margin: auto;
+    width: 400px;
 }
 
 /* These are for tye styling of the editQuiz page */
