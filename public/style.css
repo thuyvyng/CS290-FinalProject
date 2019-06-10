@@ -184,183 +184,171 @@ input.nav_search_box{
 }
 
 /* These are for tye styling of the editQuiz page */
-.edit_title #edit-quiz-title-input{         
-	background-color: var(--lightgrey);         
-	text-decoration: none;         
-	font-size: 21px;         
-	font-weight: initial;     
-	color: var(--darkgrey);
-	font-style: normal; 
-	padding-bottom: 28px;
-	position: relative;
-	left: 3%;
-	width: 49%;
-	margin-top: 23px;
-	margin-bottom: 16px;
-	border: none;
-	outline: none;
+
+.edit_intro{
+    position: relative;
+    width: 49%;
+    margin-top: 23px;
+    margin-bottom: 16px;
+    height: 205px;
+    left: 3%;
 }
 
-.edit-tags-par{
-	position: relative;
-	font-style: normal;
-	font-size: 16px;
-	font-weight: 600;
-	color: var(--dark-text);
-	left: 3%;
+.edit_intro > input{
+    background-color: var(--background-subtle);
+    text-decoration: none;
+    font-size: 21px;
+    color: var(--darkgrey);
+    padding-bottom: 28px;
+    position: relative;
+    width: 100%;
+    margin-bottom: 16px;
+    border: none;
+    outline: none;
 }
 
-.edit-study_cards{
-	position: relative;
-	bottom: 29px;
+.edit_quiz_tags{
+    position: relative;
+    height: 77px;
+    width: 63%;
+    bottom: 14px;
 }
 
-.edit-quiz-tags-input{
-	position: relative;
-	background-color: var(--lightgrey);
-	left: 3%;
-	margin-bottom: 15px;
-	bottom: 16px;
-	height: 42px;
-	width: 34%
+.edit_quiz_tags > p{
+    font-size: 20px;
+    font-weight: bold;
 }
 
-#edit-tags-input{
-	position: absolute;
-	outline: none;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 17px;
-	border: none;
-	background-color: var(--lightgrey);
-	width: 100%;
-	height: 100%;
+.edit_quiz_tags > input{
+    position: relative;
+    margin-bottom: 15px;
+    bottom: 16px;
+    height: 42px;
+    width: 100%;
+    outline: none;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    border: none;
+    background-color: var(--background-subtle);
 }
 
-.edit-questions{
-	font-size: 21px;
-	font-weight: 600;
-	font-style: normal;
-	margin-top: -1px;
-	margin-bottom: -17px;
-	position: relative;
-	left: 3%;
-	color: var(--dark-text);
+.edit_question{
+    font-size: 21px;
+    font-weight: bold;
+    font-style: normal;
+    margin-top: -11px;
+    margin-bottom: -17px;
+    position: relative;
+    left: 3%;
+    color: var(--dark-text);
 }
 
-.edit-questions-container{
-	background-color: var(--lightgrey);
-	position: relative;
-	resize: none;
-	outline: none;
-	left: .5%;
-	width: 99%;
+.edit_questions_container{
+    background-color: var(--background-subtle);
+    position: relative;
+    resize: none;
+    outline: none;
+    left: .5%;
+    width: 99%;
 }
 
-.edit_description{
-	word-wrap: break-word;
-	white-space: pre-wrap;
-	height: 46px;
+.edit_intro > textarea{
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    height: 46px;
+    background-color: var(--background-subtle);
+    font-size: 17px;
+    resize: none;
+    overflow: hidden;
+    border: none;
+    display: inline-block;
+    position: relative;
+    width: 62%;
+    outline: none;
 }
 
-#edit-quiz-description-input{
-	background-color: var(--lightgrey);
-	font-size: 17px;
-	font-weight: normal;
-	font-style: normal;
-	resize: none;
-	overflow: hidden;
-	border: none;
-	display: inline-block;
-	position: absolute;
-	left: 3%;
-	margin-top: -21px;
-	width: 34%;
-	height: 40px;
-	outline: none;
+.edit_flash_card .remove_card_button{
+    background-color: var(--light-text);
+    color: red;
+    position: relative;
+    left: 2px;
+    bottom: 8px;
 }
 
-.edit-flash-card #edit-quiz-button{
-	background-color: var(--light-text);
-	color: red;
-	position: relative;
-	left: 2px;
-	bottom: 8px;
+.edit_flash_card{
+    background-color: var(--light-text);
+    border-radius: 6px;
+    position: relative;
+    left: 22px;
+    width: 94.4%;
+    margin: 17px;
+    top: 16px;
 }
 
-.edit-flash-card{
-	background-color: var(--light-text);
-	border-radius: 6px;
-	position: relative;
-	left: 22px;
-	width: 94.4%;
-	margin: 17px;
-	top: 16px;
+.edit_quiz_question_input{
+    position: relative;
+    left: 0px;
+    top: 3px;
+    font-size: 15px;
+    height: 23px;
+    resize: none;
+    width: 47%;
+    background-color: var(--background-subtle);
+    border-color: var(--light-text);
+    outline: none;
 }
 
-#edit-quiz-question-input{
-	position: relative;
-	left: 0px;
-	top: 3px;
-	font-size: 15px;
-	height: 23px;
-	resize: none;
-	width: 47%;
-	background-color: var(--lightgrey);
-	border-color: var(--light-text);
-	outline: none;
+.edit_quiz_answer_input{
+    position: relative;
+    left: 2%;
+    width: 48%;
+    font-size: 15px;
+    resize: none;
+    background-color: var(--background-subtle);
+    border-color: var(--light-text);
+    height: 23px;
+    top: 3px;
+    outline: none;
 }
 
-#edit-quiz-answer-input{
-	position: relative;
-	left: 2%;
-	width: 48%;
-	font-size: 15px;
-	resize: none;
-	background-color: var(--lightgrey);
-	border-color: var(--light-text);
-	height: 23px;
-	top: 3px;
-	outline: none;
+.create_new_card .clickable{
+    border-style: dotted;
+    border-color: var(--darkgrey);
+    border-width: 2px;
+    background-color: var(--background-subtle);
+    text-align: center;
+    width: 96%;
+    text-decoration: none;
+    font-size: 20px;
+    color: var(--darkgrey);
+    position: relative;
+    left: 1.2%;
+    margin-top: 17px;
+    margin-bottom: 2px;
 }
 
-.create-new-card #edit-quiz-button{
-	border-style: dotted;
-	border-color: var(--darkgrey);
-	border-width: 2px;
-	background-color: var(--lightgrey);
-	text-align: center;
-	width: 96%;
-	text-decoration: none;
-	font-size: 20px;
-	color: var(--darkgrey);
-	position: relative;
-	left: 1.2%;
-	margin-top: 17px;
-	margin-bottom: 2px;
+.finish_new_quiz .clickable{
+    background-color: var(--brand-color);
+    color: var(--light-text);
+    position: relative;
+    font-size: 15px;
+    left: 85%;
+    width: 6%;
+    height: 28px;
+    margin-bottom: 15px;
 }
 
-.finish-new-quiz #edit-quiz-button{
-	background-color: var(--brand-color);
-	color: var(--light-text);
-	position: relative;
-	font-size: 15px;
-	left: 85%;
-	width: 6%;
-	height: 28px;
-	margin-bottom: 15px;
+.create_new_card{
+    position: relative;
+    margin: 17px;
 }
 
-.create-new-card{
-	position: relative;
-	margin: 17px;
-}
-
-.finish-new-quiz{
-	position: relative;
-	margin: 17px;
+.finish_new_quiz{
+    position: relative;
+    margin: 17px;
 }
 
 .clickable:hover{
-	cursor: pointer;
+    cursor: pointer;
 }
