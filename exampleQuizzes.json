@@ -1,0 +1,142 @@
+[{
+    "_id": "1",
+    "name": "State Capitals",
+    "description": "The capitals of the first 25 states in the U.S. alphabetically.",
+    "creation_date": "1559404138",
+    "tags": [
+        "Geography", "US", "Trivia"
+    ],
+    "card_count": "25",
+    "cards": [{
+        "prompt": "Alabama",
+        "answer": "Montgomery"
+    }, {
+        "prompt": "Alaska",
+        "answer": "Juneau"
+    }, {
+        "prompt": "Arizona",
+        "answer": "Phoenix"
+    }, {
+        "prompt": "Arkansas",
+        "answer": "Little Rock"
+    }, {
+        "prompt": "California",
+        "answer": "Sacramento"
+    }, {
+        "prompt": "Colorado",
+        "answer": "Denver"
+    }, {
+        "prompt": "Connecticut",
+        "answer": "Hartford"
+    }, {
+        "prompt": "Delaware",
+        "answer": "Dover"
+    }, {
+        "prompt": "Florida",
+        "answer": "Tallahassee"
+    }, {
+        "prompt": "Georgia",
+        "answer": "Atlanta"
+    }, {
+        "prompt": "Hawaii",
+        "answer": "Honolulu"
+    }, {
+        "prompt": "Idaho",
+        "answer": "Boise"
+    }, {
+        "prompt": "Illinois",
+        "answer": "Springfield"
+    }, {
+        "prompt": "Indiana",
+        "answer": "Indianapolis"
+    }, {
+        "prompt": "Iowa",
+        "answer": "Des Moines"
+    }, {
+        "prompt": "Kansas",
+        "answer": "Topeka"
+    }, {
+        "prompt": "Kentucky",
+        "answer": "Frankfort"
+    }, {
+        "prompt": "Louisiana",
+        "answer": "Baton Rouge"
+    }, {
+        "prompt": "Maine",
+        "answer": "Augusta"
+    }, {
+        "prompt": "Maryland",
+        "answer": "Annapolis"
+    }, {
+        "prompt": "Massachusetts",
+        "answer": "Boston"
+    }, {
+        "prompt": "Michigan",
+        "answer": "Lansing"
+    }, {
+        "prompt": "Minnesota",
+        "answer": "Saint Paul"
+    }, {
+        "prompt": "Mississippi",
+        "answer": "Jackson"
+    }, {
+        "prompt": "Missouri",
+        "answer": "Jefferson City"
+    }]
+}, {
+    "_id": "2",
+    "name": "French Vocab from FR 101 Midterm with Dr. Pierre Study Set",
+    "description": "Important terminology for any new french student.",
+    "creation_date": "1560052266",
+    "tags": [
+        "Language", "French"
+    ],
+    "card_count": "4",
+    "cards": [{
+        "prompt": "Bonjour",
+        "answer": "Hello"
+    }, {
+        "prompt": "Au revoir",
+        "answer": "Good bye"
+    }, {
+        "prompt": "S'il vous plaît",
+        "answer": "Please"
+    }, {
+        "prompt": "Merci",
+        "answer": "Thank you"
+    }]
+}, {
+    "_id": "3",
+    "name": "MTH 231 Logically Equivalent Rules",
+    "description": "",
+    "creation_date": "1560056401",
+    "tags": [
+        "ComputerScience", "Math", "Logic"
+    ],
+    "card_count": "8",
+    "cards": [{
+        "prompt": "p -> q",
+        "answer": "¬ p v q"
+    }, {
+        "prompt": "p -> q",
+        "answer": "¬ q -> ¬ p"
+    }, {
+        "prompt": "p <-> q",
+        "answer": "( p -> q ) ^ ( q -> p )"
+    }, {
+        "prompt": "¬ ( p ^ q )",
+        "answer": "¬ p v ¬ q"
+    }, {
+        "prompt": "¬ ( p v q )",
+        "answer": "¬ p ^ q"
+    }, {
+        "prompt": "¬ ∀x P(x)",
+        "answer": "∃y ¬ P(x)"
+    }, {
+        "prompt": "¬ ∃y P(x)",
+        "answer": "∀x ¬ P(x)"
+    }, {
+        "prompt": "¬ ∀x ∀y P(x,y)",
+        "answer": "∃x ∃y ¬ P(x,y)"
+    }]
+}]
