@@ -142,6 +142,12 @@ input.nav_search_box {
     width: 100%;
 }
 
+.cell {
+    background: var(--light-text);
+    border-radius: 10px;
+    border: solid var(--outline) 1px;
+}
+
 .num_count {
     font-family: var(--quiz-title-font);
     font-size: 20px;
@@ -176,9 +182,7 @@ input.nav_search_box {
 .card {
     padding: 10px;
     display: inline-flex;
-    background: var(--light-text);
     margin-bottom: 15px;
-    border-radius: 10px;
 }
 
 .card-divider {
@@ -318,11 +322,11 @@ input.nav_search_box {
     padding: 2px;
     align-content: space-around;
     justify-content: flex-start;
+    position: relative;
 }
 
 .search_result_preview {
-    background-color: lightgrey;
-    border-radius: 10px;
-    padding: 0 20px 0 20px;
-    margin: 20px;
+    padding: 10px;
+    margin-bottom: 20px;
+    position: relative;
 }
