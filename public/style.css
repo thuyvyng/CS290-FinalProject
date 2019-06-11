@@ -223,3 +223,81 @@ input.nav_search_box{
   padding:0 20px 0 20px;
   margin:20px;
 }
+
+/* Practice Styling */
+.practice_card {
+    border: solid 1px #EEEEEE;
+    border-radius: 20px;
+    background-color: white;
+    shadow: 10px black;
+
+    height: 400px;
+    width: 640px;
+    margin: auto;
+
+    padding: 50px;
+    display: grid;
+    position: relative;
+}
+
+.practice_info {
+    font-size: 40px;
+    margin: auto;
+}
+
+.practice_quiz_container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-color: #F2F2F2;
+  display: grid;
+}
+
+.modal_close_button {
+  position: absolute;
+  height: 25px;
+  width: 100px;
+  right: 20px;
+  top: -40px;
+  font-size: 15px;
+}
+
+.modal_button{
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: darkgrey; /* change to variable */
+}
+
+
+.modal_previous_button{
+  position: absolute;
+  left: -100px;
+  top: 50%;
+}
+
+.modal_next_button{
+  position: absolute;
+  right: -100px;
+  top: 50%;
+}
+
+.practice_instructions{
+  position: absolute;
+  top: 5px;
+  width: 740px;
+  text-align: center;
+}
+
+.card_counter{
+  position: absolute;
+  bottom: -35px;
+  width: 740px;
+  text-align: center;
+}
+.hidden{
+  visibility: hidden; 
+}
