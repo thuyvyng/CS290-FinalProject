@@ -1,36 +1,32 @@
 <body>
+
     {{> header}}
 
-    <div class="edit_quiz">
-        <div class="edit_intro">
-            <input placeholder="Title..."></input>
-            <textarea placeholder="Description..."></textarea>
-            <div class="edit_quiz_tags">
-                <p>Tags (separated by space)</p>
-                <input placeholder="Tags..."></input>
+    <div class="content_container">
+        <input class="edit_input edit_quiz_title" placeholder="Title..."></input>
+        <textarea class="edit_input edit_quiz_description" placeholder="Description..."></textarea>
+        <p class="edit_tags_label">Tags (separated by space)</p>
+        <input class="edit_input edit_quiz_tags" placeholder="Tags..."></input>
+    </div>
+
+    <div class="content_container">
+        <h4>Questions</h4>
+    </div>
+
+    <div class="full_width_contrast_container">
+        <div class="content_container card_container">
+            <div class="edit_card">
+                <button type="button" class="remove_card_button clickable">x</button>
+                <textarea class="edit_input edit_card_input" placeholder="Prompt..."></textarea>
+                <textarea class="edit_input edit_card_input" placeholder="Answer..."></textarea>
             </div>
-        </div>
-        <div class="edit_question">
-            <p>Edit Questions</p>
-        </div>
-        <div class="edit_questions_container">
-            <div class="edit_flash_card">
-                <button type="button" class="remove_card_button" class="clickable">x</button>
-                <textarea class="edit_quiz_question_input" placeholder="Question..."></textarea>
-                <textarea class="edit_quiz_answer_input" placeholder="Answer..."></textarea>
-            </div>
-            <div class="edit_flash_card">
-                <button type="button" class="remove_card_button" class="clickable">x</button>
-                <textarea class="edit_quiz_question_input" placeholder="Question..."></textarea>
-                <textarea class="edit_quiz_answer_input" placeholder="Answer..."></textarea>
-            </div>
-            <div class="create_new_card">
-                <button type="button" class="clickable">+ Add Card</button>
-            </div>
-            <div class="finish_new_quiz">
-                <button type="button" id="cancel_button" class="clickable">Cancel</button>
-                <button type="button" id="done_button" class="clickable">Done</button>
-            </div>
+            <button type="button" class="create_new_card clickable" id="add_button">+ Add Card</button>
         </div>
     </div>
+
+    <div class="content_container">
+        <button type="button" id="done_button" class="clickable footer_button cancel_button">Done</button>
+        <button type="button" id="cancel_button" class="clickable footer_button">Cancel</button>
+    </div>
+
 </body>

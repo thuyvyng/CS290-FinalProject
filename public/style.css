@@ -10,6 +10,10 @@
     margin-block-start: 0px;
     margin-block-end: 0px;
     font-family: var(--body-font);
+
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
 }
 
 body {
@@ -23,7 +27,7 @@ button {
     font-family: var(--button-font);
     background-color: var(--accent-color);
     color: var(--light-text);
-    margin: 1px;
+    padding: 10px;
     border-radius: 8px;
     font-size: 17px;
 }
@@ -43,6 +47,10 @@ li p {
     width: 50%;
     height: 100%;
     padding: 10px;
+}
+
+textarea {
+    resize: none;
 }
 
 input.nav_search_box {
@@ -211,180 +219,95 @@ input.nav_search_box {
 
 /* These are for tye styling of the editQuiz page */
 
-.edit_intro {
-    position: relative;
-    width: 49%;
-    margin-top: 23px;
-    margin-bottom: 16px;
-    height: 205px;
-    left: 3%;
+.edit_input {
+    background-color: var(--background-subtle);
+    color: var(--dark-text);
+    border: none;
+    padding: 10px;
+    font-size: 17px;
 }
 
-.edit_intro>input {
-    background-color: var(--background-subtle);
-    text-decoration: none;
-    font-size: 21px;
+.edit_input::placeholder {
     color: var(--darkgrey);
-    padding-bottom: 28px;
-    position: relative;
+}
+
+.edit_quiz_title {
+    margin-top: 40px;
+    font-size: 24px;
     width: 100%;
-    margin-bottom: 16px;
+    max-width: 800px;
+}
+
+.edit_quiz_description {
+    background-color: var(--background-subtle);
+    color: var(--dark-text);
+    font-size: 17px;
     border: none;
-    outline: none;
+    display: block;
+    margin-top: 15px;
+    padding: 10px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.edit_tags_label {
+    font-size: 14px;
+    margin: 15px 0px 0px 6px;
 }
 
 .edit_quiz_tags {
-    position: relative;
-    height: 77px;
-    width: 63%;
-    bottom: 14px;
-}
-
-.edit_quiz_tags>p {
-    font-size: 20px;
-    font-weight: bold;
-    position: relative;
-    bottom: -18px;
-}
-
-.edit_quiz_tags>input {
-    position: relative;
-    margin-bottom: 15px;
-    bottom: 16px;
-    height: 42px;
+    margin-top: 5px;
+    font-size: 14px;
     width: 100%;
-    outline: none;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 17px;
-    border: none;
-    top: 19px;
-    background-color: var(--background-subtle);
+    max-width: 300px;
 }
 
-.edit_question {
-    font-size: 21px;
-    font-weight: bold;
-    font-style: normal;
-    margin-top: -11px;
-    margin-bottom: -17px;
-    position: relative;
-    left: 3%;
-    color: var(--dark-text);
+.edit_card {
+    background-color: var(--light-text);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: inline-flex;
 }
 
-.edit_questions_container {
-    background-color: var(--background-subtle);
-    position: relative;
-    resize: none;
-    outline: none;
-    left: .5%;
-    width: 99%;
-}
-
-.edit_intro>textarea {
-    word-wrap: break-word;
-    white-space: pre-wrap;
-    height: 46px;
-    background-color: var(--background-subtle);
-    font-size: 17px;
-    resize: none;
-    overflow: hidden;
-    border: none;
-    display: inline-block;
-    position: relative;
-    width: 62%;
-    outline: none;
-}
-
-.edit_flash_card .remove_card_button {
+.remove_card_button {
     background-color: var(--light-text);
     color: red;
-    position: relative;
-    left: 2px;
-    bottom: 5px;
 }
 
-.edit_flash_card {
-    background-color: var(--light-text);
-    border-radius: 6px;
-    position: relative;
-    left: 22px;
-    width: 94.4%;
-    margin: 17px;
-    top: 16px;
-}
-
-.edit_quiz_question_input {
-    position: relative;
-    left: 0px;
-    top: 3px;
-    font-size: 15px;
-    height: 23px;
-    resize: none;
-    width: 47%;
-    background-color: var(--background-subtle);
-    border-color: var(--light-text);
-    outline: none;
-}
-
-.edit_quiz_answer_input {
-    position: relative;
-    left: 2%;
-    width: 48%;
-    font-size: 15px;
-    resize: none;
-    background-color: var(--background-subtle);
-    border-color: var(--light-text);
-    height: 23px;
-    top: 3px;
-    outline: none;
-}
-
-.create_new_card .clickable {
-    border-style: dotted;
-    border-color: var(--darkgrey);
-    border-width: 2px;
-    background-color: var(--background-subtle);
-    text-align: center;
-    width: 96%;
-    text-decoration: none;
-    font-size: 20px;
-    color: var(--darkgrey);
-    position: relative;
-    left: 1.2%;
-    margin-top: 17px;
-    margin-bottom: 2px;
-}
-
-.finish_new_quiz .clickable {
-    background-color: var(--brand-color);
-    color: var(--light-text);
-    position: relative;
-    font-size: 15px;
-    left: 85%;
-    width: 6%;
-    height: 28px;
-    margin-bottom: 15px;
+.edit_card_input {
+    font-size: 17px;
+    margin-right: 10px;
+    width: 100%;
 }
 
 .create_new_card {
-    position: relative;
-    margin: 17px;
+    border: dotted var(--darkgrey) 2px;
+    background-color: var(--background-subtle);
+    text-align: center;
+    color: var(--darkgrey);
+    padding: 5px 0px 5px 0px;
+    margin-bottom: 15px;
 }
 
-.finish_new_quiz {
-    position: relative;
-    margin: 17px;
+.create_new_card:hover {
+    transition: box-shadow 0.1s;
+    border: solid var(--darkgrey) 2px;
+    box-shadow: 1px 1px 6px, -1px -1px 6px;
+}
+
+.footer_button {
+    margin-top: 15px;
+    margin-left: 15px;
+    width: 100px;
+    float: right;
+    background-color: var(--brand-color);
+    color: var(--light-text);
 }
 
 .clickable:hover {
     cursor: pointer;
-}
-
-::placeholder {
-    font-weight: bold;
-    color: var(--darkgrey);
 }
 
 /* Styling Search Results*/
