@@ -51,7 +51,8 @@ app.get('/edit/:quizID', function(req, res, next) {
 })
 
 app.get('/search/:searchTerm', function(req, res, next) {
-    var searchTerm = req.params.searchTerm
+    var searchTerm = req.params.searchTerm;
+    searchTerm=searchTerm.replace(/\+/g, ' ')
     var results={}
     searchCollection(searchTerm, function(results){
         if(results.length!=0){
@@ -59,14 +60,14 @@ app.get('/search/:searchTerm', function(req, res, next) {
             res.status(200).render('results', {
                 title: 'Search Results',
                 search_results: results,
-                query: searchTerm,
+                query: searchTerm
             })
         }
         else{
             res.status(404).render('results', {
                 title: "No Results",
                 no_result: 1,
-                query: searchTerm,
+                query: searchTerm
             });
             
         }
