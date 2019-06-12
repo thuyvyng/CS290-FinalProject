@@ -37,7 +37,8 @@ h4{
   margin-top: 30px;
   margin-bottom: 30px;
   font-size: 24px;
-  font-family: var(--button-font)
+  font-family: var(--button-font);
+  font-weight: 400;
 }
 
 li p{
@@ -63,14 +64,8 @@ input.nav_search_box{
 
 #brand_name{
   font-family: var(--button-font);
+  font-weight: bold;
   margin-top: 6px;
-}
-
-#edit_button {
-  width: 80px;
-  position: absolute;
-  top: 4px;
-  right: 50px;
 }
 
 #home_page_pic{
@@ -82,22 +77,34 @@ input.nav_search_box{
   width: 600px;
 }
 
+#nav_search {
+    position: relative;
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 30%;
+}
+
 #nav_search_box {
   padding-left: 20px;
   padding-right: 20px;
   background: var(--lightbrand-color);
-  font-size: 16px;
+  font-size: 20px;
   color: var(--light-text);
-  min-width:300px;
-  min-height: 30px;
+  width: 100%;
+  height: 40px;
   border-radius: 10px;
   padding:0 10px 0 10px;
+}
+
+#nav_search_box:focus {
+    background: var(--light-text);
+    color: var(--dark-text);
 }
 
 #create_quiz{
   margin-top: 10px;
   margin-right: 20px;
-  font-size: 16px;
+  font-size: 18px;
   font-family: var(--button-font);
   color: var(--light-text);
   text-decoration: none;
@@ -107,6 +114,9 @@ input.nav_search_box{
 }
 
 #nav_search_button {
+  position: absolute;
+  top: 10px;
+  right: -20px;
   color: var(--light-text);
   background: none;
 }
@@ -159,6 +169,7 @@ input.nav_search_box{
   font-family: var(--quiz-title-font);
   font-size: 35px;
   margin-bottom: 20px;
+  margin-right: 100px;
 }
 
 .quiz_header {
