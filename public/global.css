@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand:500&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,800&display=swap');
 
 :root {
     --brand-color: #F96161;
     --lightbrand-color: #FF9191;
-    --accent-color: #8DCAEF;
+    --accent-color: #5A7EA1;
     --darkgrey: #B2B2B2; /*outline*/
     --outline: #EEEEEE;
     --background-subtle: #F2F2F2;
