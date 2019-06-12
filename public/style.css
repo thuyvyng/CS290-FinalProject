@@ -152,6 +152,7 @@ input.nav_search_box{
   font-family: var(--quiz-title-font);
   font-size: 35px;
   margin-bottom: 20px;
+  margin-right: 100px;
 }
 
 .quiz_header {
