@@ -16,8 +16,15 @@ var port = process.env.PORT || 3000
 app.use(express.static('public'))
 
 app.get('/', function(req, res) {
-    res.status(200).render('home', {
-        title: 'Quizicle'
+    lookupRecentQuizzes(3, function(result) {
+        if (result) {
+            res.status(200).render('home', {
+                title: 'Quizicle',
+                recents: result
+            })
+        } else {
+            next()
+        }
     })
 })
 
@@ -44,15 +51,28 @@ app.get('/edit/:quizID', function(req, res, next) {
 })
 
 app.get('/search/:searchTerm', function(req, res, next) {
-    var searchTerm = req.params.searchTerm
-
-    var results = require("./exampleQuizzes.json")
-    // Replace with database function ^^^
-
-    res.status(200).render('results', {
-        title: 'Search Results',
-        search_results: results
+    var searchTerm = req.params.searchTerm;
+    searchTerm=searchTerm.replace(/\+/g, ' ')
+    var results={}
+    searchCollection(searchTerm, function(results){
+        if(results.length!=0){
+            console.log("Results:", results)
+            res.status(200).render('results', {
+                title: 'Search Results',
+                search_results: results,
+                query: searchTerm
+            })
+        }
+        else{
+            res.status(404).render('results', {
+                title: "No Results",
+                no_result: 1,
+                query: searchTerm
+            });
+            
+        }
     })
+
 })
 
 ///SECTION: API Functions
@@ -128,6 +148,16 @@ async function lookupQuiz(quizID, completion) {
         if (err) throw err;
 
         completion(result[0])
+    });
+}
+//description tags name
+async function searchCollection(searchTerm, completion) {
+    var query = searchTerm.split('+').join(' ');
+    
+    database.collection(quizCollection).find({$text: {$search: query}}).toArray(function(err, result) {
+        if (err) throw err;
+
+        completion(result);
     });
 }
 
