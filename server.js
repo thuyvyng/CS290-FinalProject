@@ -17,7 +17,10 @@ app.use(express.static('public'))
 
 app.get('/', function(req, res) {
     res.status(200).render('home', {
-        title: 'Quizicle'
+        title: 'Quizicle',
+        scripts: [
+            {file_name: "/search.js"}
+        ]
     })
 })
 
@@ -28,8 +31,15 @@ app.get('/quiz/:quizID', function(req, res, next) {
         if (quiz) {
             quiz.title = quiz.name + " - Quizicle"
 
+
             console.log(quiz);
-            res.status(200).render('quiz', quiz)
+            res.status(200).render('quiz', {
+                quiz: quiz,
+                title: quiz.name + " - Quizicle",
+                scripts: [
+                    {file_name: "/search.js"}
+                ]
+            })
         } else {
             next()
         }
@@ -51,34 +61,29 @@ app.get('/search/:searchTerm', function(req, res, next) {
 
     res.status(200).render('results', {
         title: 'Search Results',
-        search_results: results
-    })
-})
-
-///SECTION: API Functions
-
-app.get('/api/recent/:count', function(req, res, next) {
-    var count = req.params.count
-
-    lookupRecentQuizzes(count, function(result) {
-        if (result) {
-            res.statusCode = 200
-            res.setHeader('Content-Type', 'text/javascript')
-            res.write(JSON.stringify(result))
-            res.end()
-        } else {
-            next()
-        }
+        search_results: results,
+        scripts: [
+            {file_name: "/search.js"}
+        ]
     })
 })
 
 app.get('/create', function(req, res, next) {
-    res.status(200).render('editQuiz');
+    res.status(200).render('editQuiz', {
+        title: 'Create a Quiz — Quizicle',
+        scripts: [
+            {file_name: "/search.js"},
+            {file_name: "/addNewCard.js"}
+        ]
+    });
 });
 
 app.get('*', function(req, res) {
   res.status(404).render('404', {
       title: 'Oops!',
+      scripts: [
+          {file_name: "/search.js"},
+      ]
   })
 })
 

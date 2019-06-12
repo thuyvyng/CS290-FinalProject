@@ -5,7 +5,9 @@
     <title>{{title}}</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" crossorigin="anonymous">
     <link rel="stylesheet" href="/style.css">
-    <script src="/search.js" charset="utf-8" defer></script>
+    {{#each scripts}}
+    <script src="{{file_name}}" charset="utf-8" defer></script>
+    {{/each}}
 </head>
 <html lang="en">
 
