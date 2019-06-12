@@ -26,7 +26,7 @@
         <button type ="button" class ="modal_close_button" onclick="hidePracticeModal()"> Exit </button>
         <!-- <p class = "practice_instructions"> Click to flip </p> -->
         <button type ="button" class ="modal_button modal_previous_button"> < </button>
-        <button type ="button" class ="modal_button modal_next_button"> > </button>
+        <button type ="button" onclick = "next()" class ="modal_button modal_next_button"> > </button>
        <div class="practice_card hidden" onclick="flip()">
           <!-- {{#each cards}}
             {{>practice}}
@@ -34,6 +34,7 @@
 
           <div class = "pract practice_front"> <p> {{cards.1.prompt}} </p> </div>
           <div class = "pract practice_back"> <p> {{cards.1.answer }} </p> </div>
+
        </div>
         <div class = "card_counter">
             <p id = "current_card"> questions </p> / {{card_count}} cards

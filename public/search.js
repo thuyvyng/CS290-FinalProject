@@ -30,6 +30,16 @@ function hidePracticeModal(){
   practiceCard.classList.add('hidden');
 }
 
+function next(){
+  current_card = current_card + 1;
+  document.getElementById("current_card").innerHTML = current_card.toString();
+}
+
+function previous(){
+  current_card = current_card - 1;
+  document.getElementById("current_card").innerHTML = current_card.toString();
+}
+
 var card = document.getElementsByClassName("practice_card")[0];
 card.addEventListener( 'click', function() {
   card.classList.toggle('is-flipped');
