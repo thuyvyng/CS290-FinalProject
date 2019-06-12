@@ -228,8 +228,8 @@ input.nav_search_box{
 .practice_card {
     border: solid 1px #EEEEEE;
     border-radius: 20px;
-    background-color: white;
-    shadow: 10px black;
+    background-color: var(--light-text);
+    shadow: 10px var(--dark-text);
 
     height: 400px;
     width: 640px;
@@ -240,7 +240,12 @@ input.nav_search_box{
     position: relative;
 }
 
-.practice_info {
+.practice_front {
+    font-size: 40px;
+    margin: auto;
+}
+
+.practice_back {
     font-size: 40px;
     margin: auto;
 }
@@ -299,5 +304,5 @@ input.nav_search_box{
   text-align: center;
 }
 .hidden{
-  visibility: hidden; 
+  visibility: hidden;
 }
