@@ -243,4 +243,27 @@
         "prompt": "Gestalt psychology",
         "answer": "A school of psychology emphasizing the study of whole entities rather than simple elements. Gestalt psychologists concentrate on problems of perception and problem solving and argue that people's cognitive experience is not reducible to their experience of simple elements (for example, sensations) but, rather, to the overall structure(s) of their experience."
     }]
+},
+{
+    "_id": "7",
+    "name": "Pandas",
+    "description": "I love pandas",
+    "creation_date": "1560375138 ",
+    "tags": [
+        "Panda", "Animal"
+    ],
+    "card_count": "4",
+    "cards": [{
+        "prompt": "These magnificent mammals are omnivores. But whilst pandas will occasionally eat small animals and fish, bamboo counts for __ percent of their diet.",
+        "answer": "99"
+    },{
+        "prompt": "Pandas are BIG eaters – every day they fill their tummies for up to 12 hours, shifting up to __ kilograms of bamboo!",
+        "answer": "12"
+    },{
+        "prompt": "Unlike most other bears, pandas do not hibernate. When winter approaches, they head lower down their mountain homes to warmer temperatures, where they continue to chomp away on bamboo!",
+        "answer": "hibernate"
+    },{
+        "prompt": "A panda Can Poop __ Kilos per day",
+        "answer": "28"
+    }]
 }]
