@@ -46,13 +46,19 @@ app.get('/edit/:quizID', function(req, res, next) {
 app.get('/search/:searchTerm', function(req, res, next) {
     var searchTerm = req.params.searchTerm
 
-    var results = require("./exampleQuizzes.json")
+    var results={}// = require("./exampleQuizzes.json")
+
+    searchCollection(searchTerm, function(quizzes){
+        results=quizzes
+        console.log("Results:", quizzes)
+        res.status(200).render('results', {
+            title: 'Search Results',
+            search_results: results
+        })
+    })
     // Replace with database function ^^^
 
-    res.status(200).render('results', {
-        title: 'Search Results',
-        search_results: results
-    })
+
 })
 
 ///SECTION: API Functions
@@ -125,6 +131,17 @@ async function lookupQuiz(quizID, completion) {
         if (err) throw err;
 
         completion(result[0])
+    });
+}
+//description tags name
+function searchCollection(searchTerm, completion) {
+    var n = searchTerm.replace('+', ' ')
+    console.log(n);
+    var query = { name: n }
+    database.collection(quizCollection).find({name: n}).toArray(function(err, result) {
+        if (err) throw err;
+
+        completion(result);
     });
 }
 
