@@ -138,10 +138,10 @@ input.nav_search_box{
 .num_count {
   font-family: var(--quiz-title-font);
   font-size: 20px;
-  position: absolute;
+  float: right;
   top: 0px;
   right: 50px;
-  color: var(--darkgrey);
+  color: var(--light-text);
   font-weight: bold;
 }
 
@@ -217,9 +217,12 @@ input.nav_search_box{
   align-content: space-around;
   justify-content: flex-start;
 }
+
 .search_result_preview{
-  background-color: lightgrey;
+  background-color: var(--brand-color);
+  align-content: start;
+  color: var(--light-text);
   border-radius: 10px;
-  padding:0 20px 0 20px;
+  padding:5px 20px;
   margin:20px;
 }
