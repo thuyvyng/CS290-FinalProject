@@ -73,7 +73,7 @@ app.get('/create', function(req, res, next) {
         title: 'Create a Quiz — Quizicle',
         scripts: [
             {file_name: "/search.js"},
-            {file_name: "/addNewCard.js"}
+            {file_name: "/create.js"}
         ]
     });
 });
