@@ -6,7 +6,7 @@
         <h3 class="quiz_title">{{name}}</h3>
         <p class="num_count">{{card_count}} cards</p>
         <p class="quiz_description">{{description}}</p>
-        <button type="button" class="practice_button"> Practice</button>
+        <button type="button" class="practice_button" onclick="showPracticeModal()"> Practice</button>
     </div>
 
     <div class="content_container">
@@ -24,7 +24,7 @@
 
      <div class="practice_quiz_container hidden">
        <div class="practice_card hidden">
-           <button type ="button" class ="modal_close_button"> Exit </button>
+           <button type ="button" class ="modal_close_button" onclick="hidePracticeModal()"> Exit </button>
 
            <p class = "practice_instructions"> Click to flip </p>
            <button type ="button" class ="modal_button modal_previous_button"> < </button>
@@ -37,7 +37,6 @@
            <div class = "card_counter">
                 <p id = "current_card"> questions </p> / {{card_count}} cards
            </div>
-
        </div>
     </div>
 
