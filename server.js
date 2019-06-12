@@ -51,12 +51,15 @@ app.get('/search/:searchTerm', function(req, res, next) {
             console.log("Results:", results)
             res.status(200).render('results', {
                 title: 'Search Results',
-               search_results: results
+                search_results: results,
+                query: searchTerm,
             })
         }
         else{
-            res.status(404).render('404', {
+            res.status(404).render('results', {
                 title: "No Results",
+                no_result: 1,
+                query: searchTerm,
             });
             
         }
