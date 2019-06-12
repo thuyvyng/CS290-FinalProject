@@ -209,7 +209,7 @@ input.nav_search_box{
     width: 400px;
 }
 
-/* Styling Search Results*/
+/* Styling Preview*/
 .search_result_container{
   display:flex-box;
   flex-direction:column;
@@ -231,9 +231,17 @@ input.nav_search_box{
   padding:5px 20px;
   margin:20px;
 }
+.description{
+  font-family: var(--body-font);
+  font-size: 20px;
+}
 .tags{
   display: inline;
+  background-color: var(--lightbrand-color);
+  border-radius: 10px;
+  padding: 2px;
+  color: var(--light-text);
   margin-right: 15px;
   font-weight: bold;
-  text-decoration: underline;
+  font-size: 18px;
 }

@@ -6,6 +6,9 @@
 
     <div class="content_container">
         <h4>Featured Quizzes</h4>
+        {{#each recents}}
+            {{> preview}}
+        {{/each}}
     </div>
     <div class="full_width_contrast_container">
         <ul class="card_container">

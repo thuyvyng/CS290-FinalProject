@@ -16,8 +16,15 @@ var port = process.env.PORT || 3000
 app.use(express.static('public'))
 
 app.get('/', function(req, res) {
-    res.status(200).render('home', {
-        title: 'Quizicle'
+    lookupRecentQuizzes(3, function(result) {
+        if (result) {
+            res.status(200).render('home', {
+                title: 'Quizicle',
+                recents: result
+            })
+        } else {
+            next()
+        }
     })
 })
 
