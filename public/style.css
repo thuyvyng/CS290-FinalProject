@@ -217,6 +217,11 @@ input.nav_search_box{
   top: auto;
   right: auto;
 }
+.search_result_preview>.quiz_title{
+  font-size:25px;
+  margin:5px 0;
+  cursor:pointer;
+}
 .search_result_preview{
   background-color: var(--brand-color);
   color: var(--light-text);
@@ -237,4 +242,8 @@ input.nav_search_box{
   margin-right: 15px;
   font-weight: bold;
   font-size: 18px;
+  cursor:pointer;
+}
+.hidden{
+  display: none;
 }
