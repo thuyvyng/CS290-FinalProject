@@ -244,6 +244,10 @@ input.nav_search_box{
   font-size: 18px;
   cursor:pointer;
 }
+.result_dialog{
+  font-style: italic;
+  color: var(--darkgrey);
+}
 .hidden{
   display: none;
 }
