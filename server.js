@@ -114,6 +114,9 @@ MongoClient.connect(mongoDBURL, function(err, client) {
 
     // Change this to `true` to clear the db and seed fresh from json.
     if (false) seedDatabaseFromJSON('./exampleQuizzes.json')
+
+    // Change this to backup db. Do not use nodemon.
+    if (false) backupDatabaseToJSON()
 })
 
 ///SECTION: DB API functions
@@ -150,17 +153,13 @@ function backupDatabaseToJSON() {
     database.collection(quizCollection).find({}).toArray(function(err, allQuizzes) {
         if (err) throw err
 
-        // console.log(allQuizzes);
-
         var today = new Date();
         var date = today.toISOString().substring(0, 10);
 
         var fileName = "./backup" + date + ".json"
-        var fileContent = JSON.stringify(allQuizzes, null, " ");
+        var fileContents = JSON.stringify(allQuizzes, null, " ");
 
-        console.log(fileContent);
-
-        fs.writeFile(fileName, fileContent, (err) => {
+        fs.writeFile(fileName, fileContents, (err) => {
             if (err) throw err
 
             console.log("💾  Back up complete.");
