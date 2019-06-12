@@ -135,10 +135,8 @@ async function lookupQuiz(quizID, completion) {
 }
 //description tags name
 function searchCollection(searchTerm, completion) {
-    var n = searchTerm.replace('+', ' ')
-    console.log(n);
-    var query = { name: n }
-    database.collection(quizCollection).find({name: n}).toArray(function(err, result) {
+    var query = searchTerm.split('+').join(' ');
+    database.collection(quizCollection).find({$or: [{name: {$regex: query}},{description: {$regex: query}},{tags: {$in: [query]}}]}).toArray(function(err, result) {
         if (err) throw err;
 
         completion(result);
