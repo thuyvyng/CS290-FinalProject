@@ -8,19 +8,3 @@ function search(event){
         window.location.assign(url);
     }
 }
-var titles=document.getElementsByClassName("quiz_title");
-for(var i=0;i<titles.length;i++){
-    titles[i].addEventListener('click', quiz_handle);
-}
-var tags=document.getElementsByClassName("tags");
-for(var i=0;i<tags.length;i++){
-    tags[i].addEventListener('click', click_handle);
-}
-function click_handle(event){
-    var url='/search/'+event.target.textContent.replace('#', '');
-    window.location.assign(url);
-}
-function quiz_handle(event){
-    var url='/quiz/'+event.target.parentNode.querySelector("#ID").textContent;
-    window.location.assign(url);
-}
