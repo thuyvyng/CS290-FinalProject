@@ -47,11 +47,19 @@ app.get('/search/:searchTerm', function(req, res, next) {
     var searchTerm = req.params.searchTerm
     var results={}
     searchCollection(searchTerm, function(results){
-        console.log("Results:", results)
-        res.status(200).render('results', {
-            title: 'Search Results',
-            search_results: results
-        })
+        if(results.length!=0){
+            console.log("Results:", results)
+            res.status(200).render('results', {
+                title: 'Search Results',
+               search_results: results
+            })
+        }
+        else{
+            res.status(404).render('404', {
+                title: "No Results",
+            });
+            
+        }
     })
 
 })
