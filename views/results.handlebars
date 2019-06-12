@@ -1,17 +1,18 @@
 <body>
     {{> header }}
     {{#unless no_result}}
+        <p class="result_dialog">Search Results for "{{query}}" </p>
         <div class="content_container">
-            <p class="result_dialog">Search Results for "{{query}}" </p>
             {{#each search_results}}
                 {{> preview}}
             {{/each}}
         </div>
     {{/unless}}
     {{#if no_result}}
+        <p class="result_dialog">No results for "{{query}}"</p>
         <div class="content_container"></div>
-            <p class="result_dialog">No results for "{{query}}"</p>
             <img id="error_image" src="assets/error.png"/>
+            <p class="error_description">Nothing...</p>
         </div>
     {{/if}}
 </body>

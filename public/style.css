@@ -257,7 +257,9 @@ input.nav_search_box{
 }
 .result_dialog{
   font-style: italic;
-  color: var(--darkgrey);
+  color: var(--dark-text);
+  float: left;
+  padding-left:5px;
 }
 .hidden{
   display: none;
