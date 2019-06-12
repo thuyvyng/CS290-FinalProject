@@ -3,9 +3,9 @@
     {{> header}}
 
     <div class="content_container quiz_header">
-        <h3 class="quiz_title">{{name}}</h3>
-        <p class="num_count">{{card_count}} cards</p>
-        <p class="quiz_description">{{description}}</p>
+        <h3 class="quiz_title">{{quiz.name}}</h3>
+        <p class="num_count">{{quiz.card_count}} cards</p>
+        <p class="quiz_description">{{quiz.description}}</p>
         <button type="button" class="practice_button" onclick="showPracticeModal()"> Practice</button>
     </div>
 
@@ -16,7 +16,7 @@
 
     <div class="full_width_contrast_container">
         <ul class="content_container card_container">
-          {{#each cards}}
+          {{#each quiz.cards}}
             {{> card}}
           {{/each}}
         </ul>
