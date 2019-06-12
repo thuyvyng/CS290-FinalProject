@@ -11,7 +11,7 @@ app.set('view engine', 'handlebars')
 
 var port = process.env.PORT || 3000
 
-months = [ 'January','February','March','April','May','June','July','August','September','October','November','December']
+months = ['January','February','March','April','May','June','July','August','September','October','November','December']
 
 ///SECTION: Public functions
 
@@ -58,7 +58,11 @@ app.get('/search/:searchTerm', function(req, res, next) {
     var results={}
     searchCollection(searchTerm, function(results){
         if(results.length!=0){
-            console.log("Results:", results)
+
+            results.forEach(function(item, index) {
+                item.creation_date = getMonthYear(item.creation_date)
+            })
+
             res.status(200).render('results', {
                 title: 'Search Results',
                 search_results: results,
@@ -71,7 +75,7 @@ app.get('/search/:searchTerm', function(req, res, next) {
                 no_result: 1,
                 query: searchTerm
             });
-            
+
         }
     })
 
@@ -152,7 +156,7 @@ async function lookupQuiz(quizID, completion) {
 //description tags name
 async function searchCollection(searchTerm, completion) {
     var query = searchTerm.split('+').join(' ');
-    
+
     database.collection(quizCollection).find({$text: {$search: query}}).toArray(function(err, result) {
         if (err) throw err;
 
