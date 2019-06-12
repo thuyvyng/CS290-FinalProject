@@ -1,5 +1,6 @@
 //Practice Page Stuff
 var current_card = 0;
+var counter = 0;
 
 var first_element = document.getElementsByClassName("practice_card")[current_card]
 first_element.className = "practice_card"
@@ -9,6 +10,9 @@ first_element.className = "practice_card"
 function togglePracticeModal() {
     var practiceContainer =  document.getElementsByClassName('practice_quiz_container')[0]
     practiceContainer.classList.toggle('hidden')
+
+    counter = current_card +1;
+    document.getElementById("current_card").innerHTML = counter.toString();
 
     var body = document.getElementsByTagName('body')[0]
     body.classList.toggle("no_scroll")
@@ -34,6 +38,9 @@ function previous() {
         prev_element.className = "practice_card"
 
         current_card -= 1
+        counter = current_card +1;
+        document.getElementById("current_card").innerHTML = counter.toString()
+
     }
 }
 
@@ -48,5 +55,7 @@ function next() {
         next_element.className = "practice_card"
 
         current_card += 1
+        counter = current_card +1;
+        document.getElementById("current_card").innerHTML = counter.toString()
     }
 }
