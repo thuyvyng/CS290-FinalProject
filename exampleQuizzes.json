@@ -139,39 +139,4 @@
         "prompt": "¬ ∀x ∀y P(x,y)",
         "answer": "∃x ∃y ¬ P(x,y)"
     }]
-},
-{
-    "_id": "4",
-    "name": "CSS Selecting",
-    "description": "How to select various html elements.",
-    "creation_date": "1560375138 ",
-    "tags": [
-        "ComputerScience", "Logic", "CSS"
-    ],
-    "card_count": "6",
-    "cards": [{
-        "prompt": "Class identifier",
-        "answer": "."
-    }, {
-        "prompt": "ID identifier",
-        "answer": "#"
-    }, {
-        "prompt": "Select paragraph of div",
-        "answer": "div > p"
-    },
-    {
-
-        "prompt": "Select child of parent",
-        "answer": "parent > child"
-    },
-    {
-
-        "prompt": "Select next sibling paragraph of class special",
-        "answer": "#special + p"
-    },
-    {
-
-        "prompt": "Select any sibling of ID special",
-        "answer": "#special ~ p"
-    },]
 }]
