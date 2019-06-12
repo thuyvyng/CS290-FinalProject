@@ -128,6 +128,8 @@ async function lookupQuiz(quizID, completion) {
     });
 }
 
+// Returns an array of the <count> most recent quizzes.
+// - count: Int, max number of quizzes to get.
 async function lookupRecentQuizzes(count, completion) {
     var numberOfResults = parseInt(count)
     var sorting = { creation_date: -1 }
@@ -139,6 +141,32 @@ async function lookupRecentQuizzes(count, completion) {
 }
 
 ///SECTION: DB utility functions
+
+// Backs up database to a JSON file with name backup<date>.json.
+// ⚠️ Don't run in nodemon or it will cycle forever!
+function backupDatabaseToJSON() {
+    console.log("💾  Backing up database...");
+
+    database.collection(quizCollection).find({}).toArray(function(err, allQuizzes) {
+        if (err) throw err
+
+        // console.log(allQuizzes);
+
+        var today = new Date();
+        var date = today.toISOString().substring(0, 10);
+
+        var fileName = "./backup" + date + ".json"
+        var fileContent = JSON.stringify(allQuizzes, null, " ");
+
+        console.log(fileContent);
+
+        fs.writeFile(fileName, fileContent, (err) => {
+            if (err) throw err
+
+            console.log("💾  Back up complete.");
+        });
+    })
+}
 
 function seedDatabaseFromJSON(filePath) {
     console.log("⚠️  Seeding database from " + filePath);
