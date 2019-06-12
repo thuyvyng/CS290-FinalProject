@@ -210,13 +210,6 @@ input.nav_search_box{
 }
 
 /* Styling Preview*/
-.search_result_container{
-  display:flex-box;
-  flex-direction:column;
-  padding:2px;
-  align-content: space-around;
-  justify-content: flex-start;
-}
 .search_result_preview>.num_count{
   color: var(--light-text);
   position: relative;
