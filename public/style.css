@@ -156,7 +156,12 @@ input.nav_search_box{
 }
 
 .quiz_description {
+  margin-bottom: 10px;
+}
+
+.quiz_date {
   margin-bottom: 20px;
+  color: var(--darkgrey);
 }
 
 .practice_button{

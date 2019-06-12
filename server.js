@@ -11,6 +11,8 @@ app.set('view engine', 'handlebars')
 
 var port = process.env.PORT || 3000
 
+months = [ 'January','February','March','April','May','June','July','August','September','October','November','December']
+
 ///SECTION: Public functions
 
 app.use(express.static('public'))
@@ -27,8 +29,8 @@ app.get('/quiz/:quizID', function(req, res, next) {
     lookupQuiz(quizID, function(quiz) {
         if (quiz) {
             quiz.title = quiz.name + " - Quizicle"
+            quiz.creation_date = getMonthYear(quiz.creation_date)
 
-            console.log(quiz);
             res.status(200).render('quiz', quiz)
         } else {
             next()
@@ -134,6 +136,13 @@ async function lookupRecentQuizzes(count, completion) {
     database.collection(quizCollection).find().sort(sorting).toArray(function(err, result) {
         if (err) throw err
 
+        // Get readable dates
+        result.forEach(function(item, index) {
+            item.creation_date = getMonthYear(item.creation_date)
+        })
+
+        console.log(result);
+
         completion(result.slice(0, numberOfResults))
     })
 }
@@ -203,4 +212,15 @@ function deleteCollection(collectionName, completion) {
             completion()
         }
     })
+}
+
+///MARK: Utility Functions
+
+function getMonthYear(timestamp) {
+    var date = new Date(timestamp * 1000)
+
+    var year = date.getFullYear()
+    var month = months[date.getMonth()]
+
+    return(month + " " + year)
 }
