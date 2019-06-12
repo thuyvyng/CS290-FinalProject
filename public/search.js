@@ -7,7 +7,8 @@ function search(event){
     window.location.assign(url);
 }
 
-// For practice quiz
+//Practice Page Stuff
+var current_card = 0;
 
 var practice_button = document.getElementsByClassName('practice_button')[0];
 practice_button.addEventListener('click',showPracticeModal);
@@ -18,6 +19,10 @@ function showPracticeModal(){
 
   practiceContainer.classList.remove('hidden');
   practiceCard.classList.remove('hidden');
+
+  current_card +=1;
+  document.getElementById("current_card").innerHTML = current_card.toString();
+
 }
 
 var close_practice_button = document.getElementsByClassName('modal_close_button')[0];
