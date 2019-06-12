@@ -37,7 +37,8 @@ app.get('/quiz/:quizID', function(req, res, next) {
                 quiz: quiz,
                 title: quiz.name + " - Quizicle",
                 scripts: [
-                    {file_name: "/search.js"}
+                    {file_name: "/search.js"},
+                    {file_name: "/practice.js"}
                 ]
             })
         } else {
