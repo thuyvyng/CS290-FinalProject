@@ -8,8 +8,9 @@ function add_card_code(){
     }
     var new_card_template = Handlebars.templates.newCard(newObject);
     console.log("got template ", new_card_template);
-    var cardContainer = document.querySelector('.complete_container');
-    cardContainer.insertAdjacentHTML('beforeend', new_card_template);
+
+    var addButton = document.getElementsByClassName('create_new_card')[0];
+    addButton.insertAdjacentHTML('beforebegin', new_card_template);
 }
 
 function delete_card_code(child){
@@ -48,7 +49,7 @@ function finish_card(res){
 	desc_str = desc_str[0].value;
 	console.log('description: ', desc_str);
 
-	var tagsArr = []; 
+	var tagsArr = [];
 	var tags_len = document.getElementsByClassName('edit_quiz_tags');
 	for (var i = 0; i < tags_len; i++){
 		var tags_val = tags_len[i].value;
@@ -62,7 +63,7 @@ function finish_card(res){
 	    cardsArr
 	}
 	/*var quiz = {
-	    id: 0, 
+	    id: 0,
 	    title: title_str,
 	    description: desc_str,
 	    tags: tagsArr,
@@ -73,7 +74,7 @@ function finish_card(res){
 	*/
 
 	var requestBody = JSON.stringify(quiz);
-	
+
 	request.addEventListener('load', function(event) {
 	    console.log(event.target.status);i
 	    console.log(JSON.parse(request.responseText));
@@ -82,7 +83,7 @@ function finish_card(res){
 	        res.status(500).alert("Error storing quiz in the database: " + message);
 	    }
 	});
-	
+
 	request.setRequestHeader('Content-Type', 'application/json');
 	request.send(requestBody);
     }
