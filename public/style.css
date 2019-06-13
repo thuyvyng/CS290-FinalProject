@@ -322,7 +322,7 @@ input.nav_search_box {
     background-color: inherit;
     width: 100%;
     height: 100%;
-
+    cursor: pointer;
 
     /* Perspective for flipping */
     -webkit-perspective: 4000px;
