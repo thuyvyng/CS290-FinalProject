@@ -138,6 +138,12 @@ MongoClient.connect(mongoDBURL, function(err, client) {
 
     startServer()
 
+    database.collection(quizCollection).createIndex({
+        name: "text",
+        description: "text",
+        tags: "text"
+    })
+
     // Change this to `true` to clear the db and seed fresh from json.
     if (false) seedDatabaseFromJSON('./exampleQuizzes.json')
 
