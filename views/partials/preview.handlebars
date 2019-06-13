@@ -1,5 +1,10 @@
-<div class="search_result_preview">
-    <h3>{{name}}</h3>
-    <p class="num_count">{{card_count}} Questions</p>
-    <p class="description">{{creation_date}}: {{description}}</p>
-</div>
+<a href="./quiz/{{_id}}">
+    <div class="search_result_preview">
+        <p class="quiz_title">{{name}}</p>
+        <p class="num_count">{{card_count}} Questions</p>
+        <p class="description">{{creation_date}}: {{description}}</p>
+        {{#each tags}}
+            <p class="tags">#{{this}}</p>
+        {{/each}}
+    </div>
+</a>

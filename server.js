@@ -11,13 +11,22 @@ app.set('view engine', 'handlebars')
 
 var port = process.env.PORT || 3000
 
+months = ['January','February','March','April','May','June','July','August','September','October','November','December']
+
 ///SECTION: Public functions
 
 app.use(express.static('public'))
 
 app.get('/', function(req, res) {
-    res.status(200).render('home', {
-        title: 'Quizicle'
+    lookupRecentQuizzes(3, function(result) {
+        if (result) {
+            res.status(200).render('home', {
+                title: 'Quizicle',
+                recents: result
+            })
+        } else {
+            next()
+        }
     })
 })
 
@@ -27,8 +36,8 @@ app.get('/quiz/:quizID', function(req, res, next) {
     lookupQuiz(quizID, function(quiz) {
         if (quiz) {
             quiz.title = quiz.name + " - Quizicle"
+            quiz.creation_date = getMonthYear(quiz.creation_date)
 
-            console.log(quiz);
             res.status(200).render('quiz', quiz)
         } else {
             next()
@@ -44,15 +53,32 @@ app.get('/edit/:quizID', function(req, res, next) {
 })
 
 app.get('/search/:searchTerm', function(req, res, next) {
-    var searchTerm = req.params.searchTerm
+    var searchTerm = req.params.searchTerm;
+    searchTerm=searchTerm.replace(/\+/g, ' ')
+    var results={}
+    searchCollection(searchTerm, function(results){
+        if(results.length!=0){
 
-    var results = require("./exampleQuizzes.json")
-    // Replace with database function ^^^
+            results.forEach(function(item, index) {
+                item.creation_date = getMonthYear(item.creation_date)
+            })
 
-    res.status(200).render('results', {
-        title: 'Search Results',
-        search_results: results
+            res.status(200).render('results', {
+                title: 'Search Results',
+                search_results: results,
+                query: searchTerm
+            })
+        }
+        else{
+            res.status(404).render('results', {
+                title: "No Results",
+                no_result: 1,
+                query: searchTerm
+            });
+
+        }
     })
+
 })
 
 ///SECTION: API Functions
@@ -112,8 +138,17 @@ MongoClient.connect(mongoDBURL, function(err, client) {
 
     startServer()
 
+    database.collection(quizCollection).createIndex({
+        name: "text",
+        description: "text",
+        tags: "text"
+    })
+
     // Change this to `true` to clear the db and seed fresh from json.
     if (false) seedDatabaseFromJSON('./exampleQuizzes.json')
+
+    // Change this to backup db. Do not use nodemon.
+    if (false) backupDatabaseToJSON()
 })
 
 ///SECTION: DB API functions
@@ -127,18 +162,59 @@ async function lookupQuiz(quizID, completion) {
         completion(result[0])
     });
 }
+//description tags name
+async function searchCollection(searchTerm, completion) {
+    var query = searchTerm.split('+').join(' ');
 
+    database.collection(quizCollection).find({$text: {$search: query}}).toArray(function(err, result) {
+        if (err) throw err;
+
+        completion(result);
+    });
+}
+
+// Returns an array of the <count> most recent quizzes.
+// - count: Int, max number of quizzes to get.
 async function lookupRecentQuizzes(count, completion) {
     var numberOfResults = parseInt(count)
     var sorting = { creation_date: -1 }
     database.collection(quizCollection).find().sort(sorting).toArray(function(err, result) {
         if (err) throw err
 
+        // Get readable dates
+        result.forEach(function(item, index) {
+            item.creation_date = getMonthYear(item.creation_date)
+        })
+
+        console.log(result);
+
         completion(result.slice(0, numberOfResults))
     })
 }
 
 ///SECTION: DB utility functions
+
+// Backs up database to a JSON file with name backup<date>.json.
+// ⚠️ Don't run in nodemon or it will cycle forever!
+function backupDatabaseToJSON() {
+    console.log("💾  Backing up database...");
+
+    database.collection(quizCollection).find({}).toArray(function(err, allQuizzes) {
+        if (err) throw err
+
+        var today = new Date();
+        var date = today.toISOString().substring(0, 10);
+
+        var fileName = "./backup" + date + ".json"
+        var fileContents = JSON.stringify(allQuizzes, null, " ");
+
+        fs.writeFile(fileName, fileContents, (err) => {
+            if (err) throw err
+
+            console.log("💾  Back up complete.");
+        });
+    })
+}
 
 function seedDatabaseFromJSON(filePath) {
     console.log("⚠️  Seeding database from " + filePath);
@@ -203,4 +279,15 @@ function deleteCollection(collectionName, completion) {
             completion()
         }
     })
+}
+
+///MARK: Utility Functions
+
+function getMonthYear(timestamp) {
+    var date = new Date(timestamp * 1000)
+
+    var year = date.getFullYear()
+    var month = months[date.getMonth()]
+
+    return(month + " " + year)
 }
