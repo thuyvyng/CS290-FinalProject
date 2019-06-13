@@ -24,7 +24,7 @@ function finish_card() {
 
     var title = document.getElementsByClassName('edit_quiz_title')[0].value
     if (!title) {
-        // ALERT
+        alert("The quiz must have a title!")
         return
     }
 
@@ -37,7 +37,7 @@ function finish_card() {
         var prompt = cards[index].childNodes[3].value
         var answer = cards[index].childNodes[5].value
         if (!prompt || !answer) {
-            // ALERT
+            alert("All cards must have prompts and answers!")
             return
         }
 
@@ -74,7 +74,7 @@ function finish_card() {
             window.location.replace("/quiz/" + newId)
         } else {
             console.log(event.target.response.error);
-            var message = JSON.parse(event.target.response.error).error;
+            var message = JSON.parse(event.target.response).error;
             alert("Server error: " + message);
         }
     });
