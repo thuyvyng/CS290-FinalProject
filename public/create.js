@@ -70,7 +70,8 @@ function finish_card() {
     request.addEventListener('load', function(event) {
         if (event.target.status === 200) {
             var newId = JSON.parse(request.responseText).newID
-            window.location.assign("/quiz/" + newId)
+            // Use replace to prevent filled out quiz when going back
+            window.location.replace("/quiz/" + newId)
         } else {
             console.log(event.target.response.error);
             var message = JSON.parse(event.target.response.error).error;
