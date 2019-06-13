@@ -21,7 +21,10 @@ var quiz = {
 var requestBody = JSON.stringify(quiz);
 
 request.addEventListener('load', function(event) {
-    console.log(event.target.status)
+    if (event.target.status === 200) {
+        console.log("success");
+    }
+
     console.log(JSON.parse(request.responseText))
 });
 

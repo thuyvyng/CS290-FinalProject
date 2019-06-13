@@ -1,0 +1,32 @@
+<body>
+
+    {{> header}}
+
+    <div class="content_container">
+        <input class="edit_input edit_quiz_title" placeholder="Title..."></input>
+        <textarea class="edit_input edit_quiz_description" placeholder="Description..."></textarea>
+        <p class="edit_tags_label">Tags (separated by space)</p>
+        <input class="edit_input edit_quiz_tags" placeholder="Tags..."></input>
+    </div>
+
+    <div class="content_container">
+        <h4>Questions</h4>
+    </div>
+
+    <div class="full_width_contrast_container">
+        <div class="content_container card_container">
+            <div class="cell edit_card">
+                <button type="button" onclick="delete_card_code(this)" class="remove_card_button clickable">x</button>
+                <textarea class="edit_input edit_card_input" placeholder="Prompt..."></textarea>
+                <textarea class="edit_input edit_card_input" placeholder="Answer..."></textarea>
+            </div>
+            <button type="button" class="create_new_card clickable" id="add_button">+ Add Card</button>
+        </div>
+    </div>
+
+    <div class="content_container">
+        <button type="button" id="done_button" class="clickable footer_button">Done</button>
+        <button type="button" id="cancel_button" class="clickable footer_button  cancel_button">Cancel</button>
+    </div>
+
+</body>

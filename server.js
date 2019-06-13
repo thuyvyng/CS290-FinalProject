@@ -102,7 +102,8 @@ app.get('/create', function(req, res, next) {
         title: 'Create a Quiz — Quizicle',
         scripts: [
             {file_name: "/search.js"},
-            {file_name: "/addNewCard.js"}
+            {file_name: "/create.js"},
+            {file_name: "/newCardTemplate.js"}
         ]
     });
 });
@@ -113,6 +114,8 @@ app.post('/api/create', function(req, res, next) {
     console.log(req.body);
 
     var quiz = req.body
+
+    console.log(quiz);
 
     // Check name and cards fields exist.
     if (quiz && quiz.name && quiz.cards) {

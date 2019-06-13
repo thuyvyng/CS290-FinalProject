@@ -10,12 +10,10 @@
     margin-block-start: 0px;
     margin-block-end: 0px;
     font-family: var(--body-font);
-    -webkit-box-sizing: border-box;
-    /* Safari/Chrome, other WebKit */
-    -moz-box-sizing: border-box;
-    /* Firefox, other Gecko */
-    box-sizing: border-box;
-    /* Opera/IE 8+ */
+
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
 }
 
 body {
@@ -54,6 +52,10 @@ li p {
     width: 50%;
     height: 100%;
     padding: 10px;
+}
+
+textarea {
+    resize: none;
 }
 
 input.nav_search_box {
@@ -158,6 +160,12 @@ input.nav_search_box {
     width: 100%;
 }
 
+.cell {
+    background: var(--light-text);
+    border-radius: 10px;
+    border: solid var(--outline) 1px;
+}
+
 .num_count {
     font-family: var(--quiz-title-font);
     font-size: 20px;
@@ -238,6 +246,111 @@ input.nav_search_box {
     display: block;
     margin: auto;
     width: 400px;
+}
+
+/* These are for tye styling of the editQuiz page */
+
+.edit_input {
+    background-color: var(--background-subtle);
+    color: var(--dark-text);
+    border: none;
+    padding: 10px;
+    font-size: 17px;
+}
+
+.edit_input::placeholder {
+    color: var(--darkgrey);
+}
+
+.edit_quiz_title {
+    margin-top: 40px;
+    font-size: 24px;
+    width: 100%;
+    max-width: 800px;
+}
+
+.edit_quiz_description {
+    background-color: var(--background-subtle);
+    color: var(--dark-text);
+    font-size: 17px;
+    border: none;
+    display: block;
+    margin-top: 15px;
+    padding: 10px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.edit_tags_label {
+    font-size: 14px;
+    margin: 15px 0px 0px 6px;
+}
+
+.edit_quiz_tags {
+    margin-top: 5px;
+    font-size: 14px;
+    width: 100%;
+    max-width: 300px;
+}
+
+.edit_card {
+    background-color: var(--light-text);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: inline-flex;
+}
+
+.remove_card_button {
+    padding: 0px 10px 0px 10px;
+    background-color: var(--light-text);
+    color: red;
+}
+
+.edit_card_input {
+    font-size: 17px;
+    margin-right: 10px;
+    width: 100%;
+}
+
+.create_new_card {
+    border: dotted var(--darkgrey) 2px;
+    background-color: var(--background-subtle);
+    text-align: center;
+    color: var(--darkgrey);
+    padding: 5px 0px 5px 0px;
+    margin-bottom: 15px;
+}
+
+.create_new_card:hover {
+    transition: box-shadow 0.1s;
+    border: solid var(--darkgrey) 2px;
+    box-shadow: 1px 1px 6px, -1px -1px 6px;
+}
+
+.footer_button {
+    margin-top: 15px;
+    margin-left: 15px;
+    width: 100px;
+    float: right;
+    background-color: var(--brand-color);
+    color: var(--light-text);
+}
+
+.clickable:hover {
+    cursor: pointer;
+}
+
+/* Styling Search Results*/
+
+.search_result_container {
+    display: flex-box;
+    flex-direction: column;
+    padding: 2px;
+    align-content: space-around;
+    justify-content: flex-start;
+    position: relative;
 }
 
 /* Styling Preview*/
