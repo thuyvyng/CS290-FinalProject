@@ -1,8 +1,22 @@
 <body>
     {{> header }}
-    <div class="content_container search_result_container">
-        {{#each search_results}}
-            {{> preview}}
-        {{/each}}
-    </div>
+    {{#unless no_result}}
+        <div class="content_container">
+            <p class="result_dialog">Search Results for "{{query}}" </p>
+        </div>
+        <div class="content_container">
+            {{#each search_results}}
+                {{> preview}}
+            {{/each}}
+        </div>
+    {{/unless}}
+    {{#if no_result}}
+        <div class="content_container">
+            <p class="result_dialog results_error">No results for "{{query}}"</p>
+        </div>
+        <div class="content_container"></div>
+            <img id="error_image" src="assets/error.png"/>
+            <p class="error_description">Nothing...</p>
+        </div>
+    {{/if}}
 </body>

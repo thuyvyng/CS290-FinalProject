@@ -8,8 +8,11 @@
         <h4>Featured Quizzes</h4>
     </div>
     <div class="full_width_contrast_container">
-        <ul class="card_container">
-        </ul>
+        <div class="content_container card_container">
+            {{#each recents}}
+                {{> preview}}
+            {{/each}}
+        </div>
     </div>
 
 </body>
