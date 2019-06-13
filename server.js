@@ -212,6 +212,8 @@ MongoClient.connect(mongoDBURL, function(err, client) {
         listDatabaseEntries()
     })
 
+    // Change this to backup db. Do not use nodemon.
+    if (false) backupDatabaseToJSON()
 })
 
 ///SECTION: DB API functions
@@ -246,6 +248,8 @@ async function searchCollection(searchTerm, completion) {
     });
 }
 
+// Returns an array of the <count> most recent quizzes.
+// - count: Int, max number of quizzes to get.
 async function lookupRecentQuizzes(count, completion) {
     var numberOfResults = parseInt(count)
     var sorting = { creation_date: -1 }
@@ -262,6 +266,28 @@ async function lookupRecentQuizzes(count, completion) {
 }
 
 ///SECTION: DB utility functions
+
+// Backs up database to a JSON file with name backup<date>.json.
+// ⚠️ Don't run in nodemon or it will cycle forever!
+function backupDatabaseToJSON() {
+    console.log("💾  Backing up database...");
+
+    database.collection(quizCollection).find({}).toArray(function(err, allQuizzes) {
+        if (err) throw err
+
+        var today = new Date();
+        var date = today.toISOString().substring(0, 10);
+
+        var fileName = "./backup" + date + ".json"
+        var fileContents = JSON.stringify(allQuizzes, null, " ");
+
+        fs.writeFile(fileName, fileContents, (err) => {
+            if (err) throw err
+
+            console.log("💾  Back up complete.");
+        });
+    })
+}
 
 function seedDatabaseFromJSON(filePath, completion) {
     console.log("⚠️  Seeding database from " + filePath);
