@@ -68,10 +68,12 @@ function finish_card() {
     var requestBody = JSON.stringify(quiz);
 
     request.addEventListener('load', function(event) {
-        console.log(event.target.status)
-        console.log(JSON.parse(request.responseText));
-        if (event.target.status !== 200) {
-            var message = event.target.response;
+        if (event.target.status === 200) {
+            var newId = JSON.parse(request.responseText).newID
+            window.location.assign("/quiz/" + newId)
+        } else {
+            console.log(event.target.response.error);
+            var message = JSON.parse(event.target.response.error).error;
             alert("Server error: " + message);
         }
     });

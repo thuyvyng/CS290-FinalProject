@@ -115,6 +115,8 @@ app.post('/api/create', function(req, res, next) {
 
     var quiz = req.body
 
+    console.log(quiz);
+
     // Check name and cards fields exist.
     if (quiz && quiz.name && quiz.cards) {
         // Check name non-empty cards length non-zero.
