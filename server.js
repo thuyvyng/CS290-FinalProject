@@ -22,7 +22,10 @@ app.get('/', function(req, res) {
         if (result) {
             res.status(200).render('home', {
                 title: 'Quizicle',
-                recents: result
+                recents: result,
+                scripts: [
+                    {file_name: "/search.js"}
+                ]
             })
         } else {
             next()
@@ -38,7 +41,14 @@ app.get('/quiz/:quizID', function(req, res, next) {
             quiz.title = quiz.name + " - Quizicle"
             quiz.creation_date = getMonthYear(quiz.creation_date)
 
-            res.status(200).render('quiz', quiz)
+            res.status(200).render('quiz', {
+                quiz: quiz,
+                title: quiz.name + " - Quizicle",
+                scripts: [
+                    {file_name: "/search.js"},
+                    {file_name: "/practice.js"}
+                ]
+            })
         } else {
             next()
         }
@@ -66,14 +76,20 @@ app.get('/search/:searchTerm', function(req, res, next) {
             res.status(200).render('results', {
                 title: 'Search Results',
                 search_results: results,
-                query: searchTerm
+                query: searchTerm,
+                scripts: [
+                    {file_name: "/search.js"}
+                ]
             })
         }
         else{
             res.status(404).render('results', {
                 title: "No Results",
                 no_result: 1,
-                query: searchTerm
+                query: searchTerm,
+                scripts: [
+                    {file_name: "/search.js"},
+                ]
             });
 
         }
@@ -81,7 +97,18 @@ app.get('/search/:searchTerm', function(req, res, next) {
 
 })
 
+app.get('/create', function(req, res, next) {
+    res.status(200).render('editQuiz', {
+        title: 'Create a Quiz — Quizicle',
+        scripts: [
+            {file_name: "/search.js"},
+            {file_name: "/addNewCard.js"}
+        ]
+    });
+});
+
 ///SECTION: API Functions
+
 app.post('/api/create', function(req, res, next) {
     console.log(req.body);
 
@@ -163,6 +190,9 @@ app.post('/api/create', function(req, res, next) {
 app.get('*', function(req, res) {
   res.status(404).render('404', {
       title: 'Oops!',
+      scripts: [
+          {file_name: "/search.js"},
+      ]
   })
 })
 

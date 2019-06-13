@@ -1,36 +1,41 @@
 @import "global.css";
-
-::placeholder{
-  color: var(--light-text);
+::placeholder {
+    color: var(--light-text);
 }
 
 * {
-  padding: 0px;
-  border: 0px;
-  border:0px;
-  margin-block-start:0px;
-  margin-block-end:0px;
-  font-family: var(--body-font);
+    padding: 0px;
+    border: 0px;
+    border: 0px;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    font-family: var(--body-font);
+    -webkit-box-sizing: border-box;
+    /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;
+    /* Firefox, other Gecko */
+    box-sizing: border-box;
+    /* Opera/IE 8+ */
 }
 
 body {
-  font-family: var(--body-font);
-  padding: 0;
-  margin: 0;
-  color: var(--dark-text);
+    font-family: var(--body-font);
+    padding: 0;
+    margin: 0;
+    color: var(--dark-text);
 }
 
 button {
-  font-family: var(--button-font);
-  background-color: var(--accent-color);
-  color: var(--light-text);
-  margin: 1px;
-  border-radius: 8px;
-  font-size: 17px;
+    font-family: var(--button-font);
+    background-color: var(--accent-color);
+    color: var(--light-text);
+    margin: 1px;
+    border-radius: 8px;
+    font-size: 17px;
 }
 
-ul{
-  list-style-type: none;
+ul {
+    list-style-type: none;
 }
 
 h4{
@@ -51,19 +56,19 @@ li p{
   padding: 10px;
 }
 
-input.nav_search_box{
-  color: var(--light-text);
+input.nav_search_box {
+    color: var(--light-text);
 }
 
-#logo{
-  height:40px;
-  float:left;
+#logo {
+    height: 40px;
+    float: left;
 }
 
-#logo_link{
-  width: 200px;
-  color: var(--light-text);
-  text-decoration: none;
+#logo_link {
+    width: 200px;
+    color: var(--light-text);
+    text-decoration: none;
 }
 
 #brand_name{
@@ -126,37 +131,41 @@ input.nav_search_box{
 }
 
 .nav_bar {
-  background-color: var(--brand-color);
-  color: var(--light-text);
-  flex: 1;
-  display: flex;
-  justify-content: space-between;
-  font-size: 26px;
-  height: auto;
-  padding: 10px;
+    background-color: var(--brand-color);
+    color: var(--light-text);
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    font-size: 26px;
+    height: auto;
+    padding: 10px;
+}
+
+.no_scroll {
+    overflow: hidden;
 }
 
 .content_container {
-  padding-left: 50px;
-  padding-right: 50px;
-  position: relative;
-  max-width: var(--max-content-width);
-  margin: auto;
+    padding-left: 50px;
+    padding-right: 50px;
+    position: relative;
+    max-width: var(--max-content-width);
+    margin: auto;
 }
 
 .full_width_contrast_container {
-  background: var(--background-subtle);
-  width: 100%;
+    background: var(--background-subtle);
+    width: 100%;
 }
 
 .num_count {
-  font-family: var(--quiz-title-font);
-  font-size: 20px;
-  position: absolute;
-  top: 0px;
-  right: 50px;
-  color: var(--darkgrey);
-  font-weight: bold;
+    font-family: var(--quiz-title-font);
+    font-size: 20px;
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    color: var(--darkgrey);
+    font-weight: bold;
 }
 
 .quiz_description {
@@ -168,10 +177,11 @@ input.nav_search_box{
   color: var(--darkgrey);
 }
 
-.practice_button{
-  height: 40px;
-  width:90px;
-  margin-bottom: 40px;
+.practice_button {
+    height: 40px;
+    width: 90px;
+    margin-bottom: 40px;
+    cursor: pointer;
 }
 
 .quiz_title{
@@ -182,16 +192,16 @@ input.nav_search_box{
 }
 
 .quiz_header {
-  position: relative;
-  margin-top: 40px;
+    position: relative;
+    margin-top: 40px;
 }
 
 .card {
-  padding: 10px;
-  display: inline-flex;
-  background: var(--light-text);
-  margin-bottom: 15px;
-  border-radius: 10px;
+    padding: 10px;
+    display: inline-flex;
+    background: var(--light-text);
+    margin-bottom: 15px;
+    border-radius: 10px;
 }
 
 .card-divider {
@@ -201,26 +211,27 @@ input.nav_search_box{
     background-color: var(--background-subtle);
 }
 
-.card_container{
-  padding-top: 15px;
-  background: var(--background-subtle);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.card_container {
+    padding-top: 15px;
+    background: var(--background-subtle);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 /* These are for the styling of the 404 Page */
-.error_title{
-  margin-top: 140px;
-  font-size: 50px;
-  text-align: center;
-  font-family: var(--quiz-title-font)
+
+.error_title {
+    margin-top: 140px;
+    font-size: 50px;
+    text-align: center;
+    font-family: var(--quiz-title-font)
 }
 
-.error_description{
-  margin-top: 20px;
-  font-size: 24px;
-  text-align: center;
+.error_description {
+    margin-top: 20px;
+    font-size: 24px;
+    text-align: center;
 }
 
 #error_image {
@@ -272,4 +283,231 @@ input.nav_search_box{
 }
 .hidden{
   display: none;
+}
+
+
+/* Practice Styling */
+
+/* Full screen background */
+
+.practice_quiz_container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background-color: var(--background-subtle);
+}
+
+/* Card + buttons. Centers, has max-width. */
+
+.practice_controls {
+    background-color: inherit;
+    height: 400px;
+    width: 700px;
+    max-width: 1000px;
+
+    padding: 0px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Horizontal + verticle centered container for flipping card */
+
+.practice_card_container {
+    background-color: inherit;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+
+    /* Perspective for flipping */
+    -webkit-perspective: 4000px;
+    -moz-perspective: 4000px;
+    -o-perspective: 4000px;
+    perspective: 4000px;
+}
+
+.modal_close_button {
+    position: absolute;
+    height: 45px;
+    width: 100px;
+    right: 0px;
+    top: -50px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.modal_button {
+    background-color: #AAA;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.modal_previous_button {
+    left: -75px;
+}
+
+.modal_next_button {
+    right: -75px;
+}
+
+.practice_instructions {
+    position: absolute;
+    top: 5px;
+    width: 740px;
+    text-align: center;
+}
+
+.card_counter {
+    position: absolute;
+    bottom: -50px;
+    width: 100%;
+    text-align: center;
+}
+
+.card_counter p {
+    display: inline;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+/* Wrapper to hold the front + back of cards */
+
+.practice_card {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+
+    /* Flipping behavior */
+    -webkit-transition: -webkit-transform 0.3s;
+    -moz-transition: -moz-transform 0.3s;
+    -o-transition: -o-transform 0.3s;
+    transition: transform 0.3s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform-origin: 50% 50%;
+    /* Source: https://jsfiddle.net/james2doyle/qsQun/ */
+
+    transition-timing-function: ease-in-out;
+}
+
+/* Card text */
+
+/* Main text */
+.practice_card p {
+    font-size: 40px;
+    margin: auto;
+    color: black;
+    text-align: center;
+}
+
+.practice_card .practice_instructions {
+    display: block;
+    position: absolute;
+    top: 10px;
+    font-size: 12px;
+    color: var(--darkgrey);
+    text-align: center;
+    width: 100%;
+
+    /* Fixes bug where the label would show show backside */
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+/* Front/back of cards */
+
+.practice_card div {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    background-color: white;
+    display: grid;
+    font-size: 140px;
+    /* Moving on/off screen */
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    /* Flipping behavior */
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.practice_card .back {
+    -webkit-transform: rotateX( 180deg);
+    -moz-transform: rotateX( 180deg);
+    -o-transform: rotateX( 180deg);
+    transform: rotateX( 180deg);
+}
+
+.practice_card.flipped {
+    -webkit-transform: rotateX( 180deg);
+    -moz-transform: rotateX( 180deg);
+    -o-transform: rotateX( 180deg);
+    transform: rotateX( 180deg);
+}
+
+/* Moving on/off screen */
+
+.off_left {
+    -webkit-transform: translateX( -200%);
+    -moz-transform: translateX( -200%);
+    -o-transform: translateX( -200%);
+    transform: translateX( -200%);
+}
+
+.off_left div {
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    background-color: var(--background-subtle);
+    color: var(--background-subtle);
+}
+
+.off_left div p {
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    color: var(--background-subtle);
+}
+
+.off_left div .practice_instructions {
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    color: var(--background-subtle);
+}
+
+.off_right {
+    -webkit-transform: translateX( 200%);
+    -moz-transform: translateX( 200%);
+    -o-transform: translateX( 200%);
+    transform: translateX( 200%);
+}
+
+.off_right div {
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    background-color: var(--background-subtle);
+    color: var(--background-subtle);
+}
+
+.off_right div p {
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    color: var(--background-subtle);
+}
+
+.off_right div .practice_instructions {
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    color: var(--background-subtle);
 }
