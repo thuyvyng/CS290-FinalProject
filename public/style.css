@@ -162,6 +162,7 @@ input.nav_search_box {
     height: 40px;
     width: 90px;
     margin-bottom: 40px;
+    cursor: pointer;
 }
 
 .quiz_title {
@@ -288,6 +289,7 @@ input.nav_search_box {
     right: 0px;
     top: -50px;
     font-size: 15px;
+    cursor: pointer;
 }
 
 .modal_button {
@@ -298,6 +300,7 @@ input.nav_search_box {
     top: 50%;
     transform: translateY(-50%);
     border-radius: 25px;
+    cursor: pointer;
 }
 
 .modal_previous_button {
