@@ -84,10 +84,9 @@ function finish_card() {
 }
 
 function cancel_card() {
-    console.log('In canceling process');
     var confirm_cancel = confirm("Are you sure you want to cancel this quiz?");
     if (confirm_cancel) {
-        console.log("wanted to cancel");
+        window.location.assign("/")
     }
 }
 
