@@ -303,6 +303,7 @@ input.nav_search_box {
 }
 
 .remove_card_button {
+    padding: 0px 10px 0px 10px;
     background-color: var(--light-text);
     color: red;
 }
