@@ -1,84 +1,83 @@
 @import "global.css";
-
-::placeholder{
-  color: var(--light-text);
+::placeholder {
+    color: var(--light-text);
 }
 
 * {
-  padding: 0px;
-  border: 0px;
-  border:0px;
-  margin-block-start:0px;
-  margin-block-end:0px;
-  font-family: var(--body-font);
+    padding: 0px;
+    border: 0px;
+    border: 0px;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    font-family: var(--body-font);
 }
 
 body {
-  font-family: var(--body-font);
-  padding: 0;
-  margin: 0;
-  color: var(--dark-text);
+    font-family: var(--body-font);
+    padding: 0;
+    margin: 0;
+    color: var(--dark-text);
 }
 
 button {
-  font-family: var(--button-font);
-  background-color: var(--accent-color);
-  color: var(--light-text);
-  margin: 1px;
-  border-radius: 8px;
-  font-size: 17px;
+    font-family: var(--button-font);
+    background-color: var(--accent-color);
+    color: var(--light-text);
+    margin: 1px;
+    border-radius: 8px;
+    font-size: 17px;
 }
 
-ul{
-  list-style-type: none;
+ul {
+    list-style-type: none;
 }
 
-h4{
-  margin-top: 30px;
-  margin-bottom: 30px;
-  font-size: 24px;
-  font-family: var(--button-font);
-  font-weight: 400;
+h4 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-family: var(--button-font);
+    font-weight: 400;
 }
 
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
-li p{
-  width: 50%;
-  height: 100%;
-  padding: 10px;
+li p {
+    width: 50%;
+    height: 100%;
+    padding: 10px;
 }
 
-input.nav_search_box{
-  color: var(--light-text);
+input.nav_search_box {
+    color: var(--light-text);
 }
 
-#logo{
-  height:40px;
-  float:left;
+#logo {
+    height: 40px;
+    float: left;
 }
 
-#logo_link{
-  width: 200px;
-  color: var(--light-text);
-  text-decoration: none;
+#logo_link {
+    width: 200px;
+    color: var(--light-text);
+    text-decoration: none;
 }
 
-#brand_name{
-  font-family: var(--button-font);
-  font-weight: bold;
-  margin-top: 6px;
+#brand_name {
+    font-family: var(--button-font);
+    font-weight: bold;
+    margin-top: 6px;
 }
 
-#home_page_pic{
-  margin-top: 120px;
-  margin-bottom: 60px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 600px;
+#home_page_pic {
+    margin-top: 120px;
+    margin-bottom: 60px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 600px;
 }
 
 #nav_search {
@@ -89,15 +88,15 @@ input.nav_search_box{
 }
 
 #nav_search_box {
-  padding-left: 20px;
-  padding-right: 20px;
-  background: var(--lightbrand-color);
-  font-size: 20px;
-  color: var(--light-text);
-  width: 100%;
-  height: 40px;
-  border-radius: 10px;
-  padding:0 10px 0 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background: var(--lightbrand-color);
+    font-size: 20px;
+    color: var(--light-text);
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    padding: 0 10px 0 10px;
 }
 
 #nav_search_box:focus {
@@ -105,93 +104,93 @@ input.nav_search_box{
     color: var(--dark-text);
 }
 
-#create_quiz{
-  margin-top: 10px;
-  margin-right: 20px;
-  font-size: 18px;
-  font-family: var(--button-font);
-  color: var(--light-text);
-  text-decoration: none;
-  background: none;
-  width: 200px;
-  text-align:right;
+#create_quiz {
+    margin-top: 10px;
+    margin-right: 20px;
+    font-size: 18px;
+    font-family: var(--button-font);
+    color: var(--light-text);
+    text-decoration: none;
+    background: none;
+    width: 200px;
+    text-align: right;
 }
 
 #nav_search_button {
-  position: absolute;
-  top: 10px;
-  right: -20px;
-  color: var(--light-text);
-  background: none;
+    position: absolute;
+    top: 10px;
+    right: -20px;
+    color: var(--light-text);
+    background: none;
 }
 
 .nav_bar {
-  background-color: var(--brand-color);
-  color: var(--light-text);
-  flex: 1;
-  display: flex;
-  justify-content: space-between;
-  font-size: 26px;
-  height: auto;
-  padding: 10px;
+    background-color: var(--brand-color);
+    color: var(--light-text);
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    font-size: 26px;
+    height: auto;
+    padding: 10px;
 }
 
 .content_container {
-  padding-left: 50px;
-  padding-right: 50px;
-  position: relative;
-  max-width: var(--max-content-width);
-  margin: auto;
+    padding-left: 50px;
+    padding-right: 50px;
+    position: relative;
+    max-width: var(--max-content-width);
+    margin: auto;
 }
 
 .full_width_contrast_container {
-  background: var(--background-subtle);
-  width: 100%;
+    background: var(--background-subtle);
+    width: 100%;
 }
 
 .num_count {
-  font-family: var(--quiz-title-font);
-  font-size: 20px;
-  position: absolute;
-  top: 0px;
-  right: 50px;
-  color: var(--darkgrey);
-  font-weight: bold;
+    font-family: var(--quiz-title-font);
+    font-size: 20px;
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    color: var(--darkgrey);
+    font-weight: bold;
 }
 
 .quiz_description {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .quiz_date {
-  margin-bottom: 20px;
-  color: var(--darkgrey);
+    margin-bottom: 20px;
+    color: var(--darkgrey);
 }
 
-.practice_button{
-  height: 40px;
-  width:90px;
-  margin-bottom: 40px;
+.practice_button {
+    height: 40px;
+    width: 90px;
+    margin-bottom: 40px;
 }
 
-.quiz_title{
-  font-family: var(--quiz-title-font);
-  font-size: 35px;
-  margin-bottom: 20px;
-  margin-right: 100px;
+.quiz_title {
+    font-family: var(--quiz-title-font);
+    font-size: 35px;
+    margin-bottom: 20px;
+    margin-right: 100px;
 }
 
 .quiz_header {
-  position: relative;
-  margin-top: 40px;
+    position: relative;
+    margin-top: 40px;
 }
 
 .card {
-  padding: 10px;
-  display: inline-flex;
-  background: var(--light-text);
-  margin-bottom: 15px;
-  border-radius: 10px;
+    padding: 10px;
+    display: inline-flex;
+    background: var(--light-text);
+    margin-bottom: 15px;
+    border-radius: 10px;
 }
 
 .card-divider {
@@ -201,26 +200,27 @@ input.nav_search_box{
     background-color: var(--background-subtle);
 }
 
-.card_container{
-  padding-top: 15px;
-  background: var(--background-subtle);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.card_container {
+    padding-top: 15px;
+    background: var(--background-subtle);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 /* These are for the styling of the 404 Page */
-.error_title{
-  margin-top: 140px;
-  font-size: 50px;
-  text-align: center;
-  font-family: var(--quiz-title-font)
+
+.error_title {
+    margin-top: 140px;
+    font-size: 50px;
+    text-align: center;
+    font-family: var(--quiz-title-font)
 }
 
-.error_description{
-  margin-top: 20px;
-  font-size: 24px;
-  text-align: center;
+.error_description {
+    margin-top: 20px;
+    font-size: 24px;
+    text-align: center;
 }
 
 #error_image {
@@ -230,46 +230,61 @@ input.nav_search_box{
 }
 
 /* Styling Preview*/
-.search_result_preview>.num_count{
-  color: var(--light-text);
-  position: relative;
-  float: right;
-  top: auto;
-  right: auto;
+
+.search_result_preview>.num_count {
+    color: var(--light-text);
+    position: relative;
+    float: right;
+    top: auto;
+    right: auto;
 }
-.search_result_preview>.quiz_title{
-  font-size:25px;
-  margin:5px 0;
-  cursor:pointer;
+
+.search_result_preview>.quiz_title {
+    font-size: 25px;
+    margin: 5px 0;
+    cursor: pointer;
 }
-.search_result_preview{
-  background-color: var(--brand-color);
-  color: var(--light-text);
-  border-radius: 10px;
-  padding:5px 20px;
-  margin:20px;
+
+.search_result_preview {
+    background-color: var(--brand-color);
+    color: var(--light-text);
+    border-radius: 10px;
+    padding: 5px 20px 15px 20px;
+    margin-bottom: 15px;
 }
-.description{
-  font-family: var(--body-font);
-  font-size: 20px;
+
+.description {
+    font-family: var(--body-font);
+    font-size: 20px;
+    margin-bottom: 10px;
 }
-.tags{
-  display: inline;
-  background-color: var(--lightbrand-color);
-  border-radius: 10px;
-  padding: 2px;
-  color: var(--light-text);
-  margin-right: 15px;
-  font-weight: bold;
-  font-size: 18px;
-  cursor:pointer;
+
+.tags {
+    display: inline;
+    background-color: var(--lightbrand-color);
+    border-radius: 10px;
+    padding: 2px 10px 2px 10px;
+    color: var(--light-text);
+    margin-right: 0px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
 }
-.result_dialog{
-  font-style: italic;
-  color: var(--dark-text);
-  float: left;
-  padding-left:5px;
+
+.result_dialog {
+    font-style: italic;
+    color: var(--dark-text);
+    margin: 20px 0px 20px 0px;
+    padding-left: 5px;
 }
-.hidden{
-  display: none;
+
+.results_error {
+    width: 100%;
+    text-align: center;
+    -
+}
+
+.hidden {
+    display: none;
 }
