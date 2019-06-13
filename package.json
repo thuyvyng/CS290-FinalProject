@@ -5,6 +5,7 @@
     "main": "server.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" ",
+        "build": "handlebars views/partials/newCard.handlebars -f public/newCardTemplate.js",
         "start": "node server.js",
         "dev": "nodemon server.js"
     },
