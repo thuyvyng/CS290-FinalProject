@@ -3,6 +3,7 @@
 var express = require('express')
 var handlebars = require('handlebars')
 var expressHandlebars = require('express-handlebars')
+var bodyParser = require('body-parser')
 var fs = require('fs')
 
 var app = express()
@@ -11,11 +12,10 @@ app.set('view engine', 'handlebars')
 
 var port = process.env.PORT || 3000
 
-months = ['January','February','March','April','May','June','July','August','September','October','November','December']
+app.use(bodyParser.json())
+app.use(express.static('public'))
 
 ///SECTION: Public functions
-
-app.use(express.static('public'))
 
 app.get('/', function(req, res) {
     lookupRecentQuizzes(3, function(result) {
@@ -107,6 +107,86 @@ app.get('/create', function(req, res, next) {
     });
 });
 
+///SECTION: API Functions
+
+app.post('/api/create', function(req, res, next) {
+    console.log(req.body);
+
+    var quiz = req.body
+
+    // Check name and cards fields exist.
+    if (quiz && quiz.name && quiz.cards) {
+        // Check name non-empty cards length non-zero.
+        if (quiz.name.replace(/ /g, '').length !== 0 && quiz.cards.length > 0) {
+            // Check every card has prompt and answer.
+            for (index = 0; index < quiz.cards.length; index++) {
+                if (!quiz.cards[index].prompt || quiz.cards[index].prompt.replace(/ /g, '').length == 0 ||
+                    !quiz.cards[index].answer || quiz.cards[index].answer.replace(/ /g, '').length == 0) {
+                    res.status(400).send({
+                        error: "Some cards missing prompts/answers."
+                    })
+                }
+            }
+
+            // Add a blank description if none exists or if all spaces.
+            if (!quiz.description || quiz.description.replace(/ /g, '').length === 0) {
+                quiz.description = ""
+            }
+
+            // Add empty tags array if none exists or if all spaces.
+            if (!quiz.tags || quiz.tags.length === 0) {
+                quiz.tags = []
+            } else {
+                // Check every tag has text.
+                for (index = quiz.tags.length - 1; index > 0; index--) {
+                    if (quiz.tags[index].replace(/ /g, '').length === 0) {
+                        res.status(400).send({
+                            error: "Some tags empty."
+                        })
+                    }
+                }
+            }
+
+            // Server handles meta-data and db information
+            quiz.creation_date = String(Math.round(+new Date()/1000))
+            quiz.card_count = String(quiz.cards.length)
+            getNextQuizID(function(err, newID) {
+                if (err) {
+                    res.status(500).send({
+                        error: "Failed to create id."
+                    })
+                }
+
+                quiz._id = String(newID)
+
+                addQuiz(quiz, function(err, result) {
+                    if (err) {
+                        res.status(500).send({
+                            error: "Failed to write to database."
+                        })
+                    }
+
+                    res.status(200).send(JSON.stringify({
+                        message: "Quiz successfully added",
+                        newID: String(newID)
+                    }))
+
+                    listDatabaseEntries()
+                })
+            })
+
+        } else {
+            res.status(400).send({
+                error: "Required fields empty."
+            })
+        }
+    } else {
+        res.status(400).send({
+            error: "Request missing required fields."
+        })
+    }
+})
+
 app.get('*', function(req, res) {
   res.status(404).render('404', {
       title: 'Oops!',
@@ -127,6 +207,8 @@ function startServer() {
 var MongoClient = require('mongodb').MongoClient
 var database
 const quizCollection = 'quizzes'
+const sequenceCollection = 'sequence'
+const quizSequence = 'quiz_ID'
 
 // Set up Mongo DB parameters
 var mongoDBHost = process.env.MONGODB_HOST
@@ -150,8 +232,21 @@ MongoClient.connect(mongoDBURL, function(err, client) {
 
     startServer()
 
+    database.collection(quizCollection).createIndex({
+        name: "text",
+        description: "text",
+        tags: "text"
+    })
+
     // Change this to `true` to clear the db and seed fresh from json.
-    if (false) seedDatabaseFromJSON('./exampleQuizzes.json')
+    if (false) seedDatabaseFromJSON('./exampleQuizzes.json', function() {
+        listDatabaseEntries()
+    })
+
+    // Start database from scratch.
+    if (false) resetDatabase(function() {
+        listDatabaseEntries()
+    })
 
     // Change this to backup db. Do not use nodemon.
     if (false) backupDatabaseToJSON()
@@ -168,6 +263,16 @@ async function lookupQuiz(quizID, completion) {
         completion(result[0])
     });
 }
+
+// Writes new quiz to db.
+async function addQuiz(quiz, completion) {
+    database.collection(quizCollection).insertOne(quiz, function(err, result) {
+        if (completion) {
+            completion(err, result)
+        }
+    })
+}
+
 //description tags name
 async function searchCollection(searchTerm, completion) {
     var query = searchTerm.split('+').join(' ');
@@ -191,8 +296,6 @@ async function lookupRecentQuizzes(count, completion) {
         result.forEach(function(item, index) {
             item.creation_date = getMonthYear(item.creation_date)
         })
-
-        console.log(result);
 
         completion(result.slice(0, numberOfResults))
     })
@@ -222,18 +325,80 @@ function backupDatabaseToJSON() {
     })
 }
 
-function seedDatabaseFromJSON(filePath) {
+function seedDatabaseFromJSON(filePath, completion) {
     console.log("⚠️  Seeding database from " + filePath);
 
     var quizzes = require(filePath)
 
     cleanUp(quizCollection, function() {
         createCollection(quizCollection, function() {
-            database.collection(quizCollection).insertMany(quizzes, function(err, res) {
-                if (err) throw err
+            database.collection(quizCollection).insertMany(quizzes)
 
+            // Start the quiz id counter at the last seed quiz
+            resetIDs(quizzes.length + 1, function() {
+                if (completion) {
+                    completion()
+                }
             })
         })
+    })
+}
+
+function resetDatabase(completion) {
+    console.log("⚠️  Resetting database...");
+
+
+    cleanUp(quizCollection, function() {
+        createCollection(quizCollection, function() {
+            // Start the quiz id counter at 1
+            resetIDs(1, function() {
+                if (completion) {
+                    completion()
+                }
+            })
+        })
+    })
+}
+
+function resetIDs(start, completion) {
+    cleanUp(sequenceCollection, function() {
+        createCollection(sequenceCollection, function() {
+            var sequenceBase = {
+                _id: quizSequence,
+                sequence_value: start
+            }
+
+            database.collection(sequenceCollection).insertOne(sequenceBase)
+
+            if (completion) {
+                completion()
+            }
+        })
+    })
+}
+
+function getNextQuizID(completion) {
+    database.collection(sequenceCollection).findOneAndUpdate(
+        { _id: quizSequence },
+        { $inc: { sequence_value: 1 }},
+        function (err, data) {
+
+            completion(err, data.value.sequence_value)
+        })
+}
+
+function listDatabaseEntries() {
+    console.log("Collections: - - - - - - - - - - - - - - - - - - - -");
+    listAllCollections()
+
+    database.collection(quizCollection).find({}).toArray(function(err, result) {
+        console.log("Quizzes: - - - - - - - - - - - - - - - - - - - -");
+        console.log(result)
+    })
+
+    database.collection(sequenceCollection).find({}).toArray(function(err, result) {
+        console.log("Sequence: - - - - - - - - - - - - - - - - - - - -");
+        console.log(result)
     })
 }
 
@@ -287,9 +452,11 @@ function deleteCollection(collectionName, completion) {
     })
 }
 
-///MARK: Utility Functions
+///MARK: General utility functions
 
 function getMonthYear(timestamp) {
+    var months = ['January','February','March','April','May','June','July','August','September','October','November','December']
+
     var date = new Date(timestamp * 1000)
 
     var year = date.getFullYear()
