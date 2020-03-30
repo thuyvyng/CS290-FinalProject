@@ -10,27 +10,27 @@ var app = express()
 app.engine('handlebars', expressHandlebars({defaultLayout: 'main'}))
 app.set('view engine', 'handlebars')
 
-var port = process.env.PORT || 3000
+// var port = process.env.PORT || 3000
+const port = 3000
 
 app.use(bodyParser.json())
 app.use(express.static('public'))
 
 ///SECTION: Public functions
 
+
 app.get('/', function(req, res) {
-    lookupRecentQuizzes(3, function(result) {
-        if (result) {
-            res.status(200).render('home', {
-                title: 'Quizicle',
-                recents: result,
-                scripts: [
-                    {file_name: "/search.js"}
-                ]
-            })
-        } else {
-            next()
-        }
+    res.status(200).render('home', {
+        title: 'Quizicle',
+        recents: [
+            { file_name: "/exampleQuizzes.json" }
+        ],
+        scripts: [
+            {file_name: "/search.js"}
+        ]
     })
+        
+    
 })
 
 app.get('/quiz/:quizID', function(req, res, next) {
@@ -153,30 +153,30 @@ app.post('/api/create', function(req, res, next) {
             // Server handles meta-data and db information
             quiz.creation_date = String(Math.round(+new Date()/1000))
             quiz.card_count = String(quiz.cards.length)
-            getNextQuizID(function(err, newID) {
-                if (err) {
-                    res.status(500).send({
-                        error: "Failed to create id."
-                    })
-                }
+            // getNextQuizID(function(err, newID) {
+            //     if (err) {
+            //         res.status(500).send({
+            //             error: "Failed to create id."
+            //         })
+            //     }
 
-                quiz._id = String(newID)
+            //     quiz._id = String(newID)
 
-                addQuiz(quiz, function(err, result) {
-                    if (err) {
-                        res.status(500).send({
-                            error: "Failed to write to database."
-                        })
-                    }
+            //     addQuiz(quiz, function(err, result) {
+            //         if (err) {
+            //             res.status(500).send({
+            //                 error: "Failed to write to database."
+            //             })
+            //         }
 
-                    res.status(200).send(JSON.stringify({
-                        message: "Quiz successfully added",
-                        newID: String(newID)
-                    }))
+            //         res.status(200).send(JSON.stringify({
+            //             message: "Quiz successfully added",
+            //             newID: String(newID)
+            //         }))
 
-                    listDatabaseEntries()
-                })
-            })
+            //         listDatabaseEntries()
+            //     })
+            // })
 
         } else {
             res.status(400).send({
@@ -199,261 +199,261 @@ app.get('*', function(req, res) {
   })
 })
 
-function startServer() {
-    app.listen(port, function() {
-        console.log("🤖 Server is listening on port", port, "...\n")
-    })
-}
+
+app.listen(port, function() {
+    console.log("🤖 Server is listening on port", port, "...\n")
+})
+
 
 /// MARK: ☁️ Mongo Database for the Quizicle website - - - - - - - - - - - - -
 
-var MongoClient = require('mongodb').MongoClient
-var database
-const quizCollection = 'quizzes'
-const sequenceCollection = 'sequence'
-const quizSequence = 'quiz_ID'
+// var MongoClient = require('mongodb').MongoClient
+// var database
+// const quizCollection = 'quizzes'
+// const sequenceCollection = 'sequence'
+// const quizSequence = 'quiz_ID'
 
-// Set up Mongo DB parameters
-var mongoDBHost = process.env.MONGODB_HOST
-// Check if a port is specified, else default to the standard port
-var mongoDBPort = process.env.MONGODB_PORT || 27017
-var mongoDBUser = process.env.MONGODB_USER
-var mongoDBPass = process.env.MONGODB_PASS
-var mongoDBName = process.env.MONGODB_NAME
+// // Set up Mongo DB parameters
+// var mongoDBHost = process.env.MONGODB_HOST
+// // Check if a port is specified, else default to the standard port
+// var mongoDBPort = process.env.MONGODB_PORT || 27017
+// var mongoDBUser = process.env.MONGODB_USER
+// var mongoDBPass = process.env.MONGODB_PASS
+// var mongoDBName = process.env.MONGODB_NAME
 
-var mongoDBURL = 'mongodb://' + mongoDBUser + ':' + mongoDBPass + '@' +
-    mongoDBHost + ':' + mongoDBPort + '/' + mongoDBName
+// var mongoDBURL = 'mongodb://' + mongoDBUser + ':' + mongoDBPass + '@' +
+//     mongoDBHost + ':' + mongoDBPort + '/' + mongoDBName
 
-MongoClient.connect(mongoDBURL, function(err, client) {
-    if (err) {
-        throw err
-    }
+// MongoClient.connect(mongoDBURL, function(err, client) {
+//     if (err) {
+//         throw err
+//     }
 
-    // Set a gloabl variable so it can be used by the whole middleware stack.
-    database = client.db(mongoDBName)
-    console.log("☁️  Connected to database.")
+//     // Set a gloabl variable so it can be used by the whole middleware stack.
+//     database = client.db(mongoDBName)
+//     console.log("☁️  Connected to database.")
 
-    startServer()
+//     startServer()
 
-    database.collection(quizCollection).createIndex({
-        name: "text",
-        description: "text",
-        tags: "text"
-    })
+//     database.collection(quizCollection).createIndex({
+//         name: "text",
+//         description: "text",
+//         tags: "text"
+//     })
 
-    // Change this to `true` to clear the db and seed fresh from json.
-    if (false) seedDatabaseFromJSON('./exampleQuizzes.json', function() {
-        listDatabaseEntries()
-    })
+//     // Change this to `true` to clear the db and seed fresh from json.
+//     if (false) seedDatabaseFromJSON('./exampleQuizzes.json', function() {
+//         listDatabaseEntries()
+//     })
 
-    // Start database from scratch.
-    if (false) resetDatabase(function() {
-        listDatabaseEntries()
-    })
+//     // Start database from scratch.
+//     if (false) resetDatabase(function() {
+//         listDatabaseEntries()
+//     })
 
-    // Change this to backup db. Do not use nodemon.
-    if (false) backupDatabaseToJSON()
-})
+//     // Change this to backup db. Do not use nodemon.
+//     if (false) backupDatabaseToJSON()
+// })
 
-///SECTION: DB API functions
+// ///SECTION: DB API functions
 
-// Returns the json of the quiz with the given id.
-async function lookupQuiz(quizID, completion) {
-    var query = { _id: quizID }
-    database.collection(quizCollection).find(query).toArray(function(err, result) {
-        if (err) throw err;
+// // Returns the json of the quiz with the given id.
+// async function lookupQuiz(quizID, completion) {
+//     var query = { _id: quizID }
+//     database.collection(quizCollection).find(query).toArray(function(err, result) {
+//         if (err) throw err;
 
-        completion(result[0])
-    });
-}
+//         completion(result[0])
+//     });
+// }
 
-// Writes new quiz to db.
-async function addQuiz(quiz, completion) {
-    database.collection(quizCollection).insertOne(quiz, function(err, result) {
-        if (completion) {
-            completion(err, result)
-        }
-    })
-}
+// // Writes new quiz to db.
+// async function addQuiz(quiz, completion) {
+//     database.collection(quizCollection).insertOne(quiz, function(err, result) {
+//         if (completion) {
+//             completion(err, result)
+//         }
+//     })
+// }
 
-//description tags name
-async function searchCollection(searchTerm, completion) {
-    var query = searchTerm.split('+').join(' ');
+// //description tags name
+// async function searchCollection(searchTerm, completion) {
+//     var query = searchTerm.split('+').join(' ');
 
-    database.collection(quizCollection).find({$text: {$search: query}}).toArray(function(err, result) {
-        if (err) throw err;
+//     database.collection(quizCollection).find({$text: {$search: query}}).toArray(function(err, result) {
+//         if (err) throw err;
 
-        completion(result);
-    });
-}
+//         completion(result);
+//     });
+// }
 
-// Returns an array of the <count> most recent quizzes.
-// - count: Int, max number of quizzes to get.
-async function lookupRecentQuizzes(count, completion) {
-    var numberOfResults = parseInt(count)
-    var sorting = { creation_date: -1 }
-    database.collection(quizCollection).find().sort(sorting).toArray(function(err, result) {
-        if (err) throw err
+// // Returns an array of the <count> most recent quizzes.
+// // - count: Int, max number of quizzes to get.
+// async function lookupRecentQuizzes(count, completion) {
+//     var numberOfResults = parseInt(count)
+//     var sorting = { creation_date: -1 }
+//     database.collection(quizCollection).find().sort(sorting).toArray(function(err, result) {
+//         if (err) throw err
 
-        // Get readable dates
-        result.forEach(function(item, index) {
-            item.creation_date = getMonthYear(item.creation_date)
-        })
+//         // Get readable dates
+//         result.forEach(function(item, index) {
+//             item.creation_date = getMonthYear(item.creation_date)
+//         })
 
-        completion(result.slice(0, numberOfResults))
-    })
-}
+//         completion(result.slice(0, numberOfResults))
+//     })
+// }
 
-///SECTION: DB utility functions
+// ///SECTION: DB utility functions
 
-// Backs up database to a JSON file with name backup<date>.json.
-// ⚠️ Don't run in nodemon or it will cycle forever!
-function backupDatabaseToJSON() {
-    console.log("💾  Backing up database...");
+// // Backs up database to a JSON file with name backup<date>.json.
+// // ⚠️ Don't run in nodemon or it will cycle forever!
+// function backupDatabaseToJSON() {
+//     console.log("💾  Backing up database...");
 
-    database.collection(quizCollection).find({}).toArray(function(err, allQuizzes) {
-        if (err) throw err
+//     database.collection(quizCollection).find({}).toArray(function(err, allQuizzes) {
+//         if (err) throw err
 
-        var today = new Date();
-        var date = today.toISOString().substring(0, 10);
+//         var today = new Date();
+//         var date = today.toISOString().substring(0, 10);
 
-        var fileName = "./backup" + date + ".json"
-        var fileContents = JSON.stringify(allQuizzes, null, " ");
+//         var fileName = "./backup" + date + ".json"
+//         var fileContents = JSON.stringify(allQuizzes, null, " ");
 
-        fs.writeFile(fileName, fileContents, (err) => {
-            if (err) throw err
+//         fs.writeFile(fileName, fileContents, (err) => {
+//             if (err) throw err
 
-            console.log("💾  Back up complete.");
-        });
-    })
-}
+//             console.log("💾  Back up complete.");
+//         });
+//     })
+// }
 
-function seedDatabaseFromJSON(filePath, completion) {
-    console.log("⚠️  Seeding database from " + filePath);
+// function seedDatabaseFromJSON(filePath, completion) {
+//     console.log("⚠️  Seeding database from " + filePath);
 
-    var quizzes = require(filePath)
+//     var quizzes = require(filePath)
 
-    cleanUp(quizCollection, function() {
-        createCollection(quizCollection, function() {
-            database.collection(quizCollection).insertMany(quizzes)
+//     cleanUp(quizCollection, function() {
+//         createCollection(quizCollection, function() {
+//             database.collection(quizCollection).insertMany(quizzes)
 
-            // Start the quiz id counter at the last seed quiz
-            resetIDs(quizzes.length + 1, function() {
-                if (completion) {
-                    completion()
-                }
-            })
-        })
-    })
-}
+//             // Start the quiz id counter at the last seed quiz
+//             resetIDs(quizzes.length + 1, function() {
+//                 if (completion) {
+//                     completion()
+//                 }
+//             })
+//         })
+//     })
+// }
 
-function resetDatabase(completion) {
-    console.log("⚠️  Resetting database...");
+// function resetDatabase(completion) {
+//     console.log("⚠️  Resetting database...");
 
 
-    cleanUp(quizCollection, function() {
-        createCollection(quizCollection, function() {
-            // Start the quiz id counter at 1
-            resetIDs(1, function() {
-                if (completion) {
-                    completion()
-                }
-            })
-        })
-    })
-}
+//     cleanUp(quizCollection, function() {
+//         createCollection(quizCollection, function() {
+//             // Start the quiz id counter at 1
+//             resetIDs(1, function() {
+//                 if (completion) {
+//                     completion()
+//                 }
+//             })
+//         })
+//     })
+// }
 
-function resetIDs(start, completion) {
-    cleanUp(sequenceCollection, function() {
-        createCollection(sequenceCollection, function() {
-            var sequenceBase = {
-                _id: quizSequence,
-                sequence_value: start
-            }
+// function resetIDs(start, completion) {
+//     cleanUp(sequenceCollection, function() {
+//         createCollection(sequenceCollection, function() {
+//             var sequenceBase = {
+//                 _id: quizSequence,
+//                 sequence_value: start
+//             }
 
-            database.collection(sequenceCollection).insertOne(sequenceBase)
+//             database.collection(sequenceCollection).insertOne(sequenceBase)
 
-            if (completion) {
-                completion()
-            }
-        })
-    })
-}
+//             if (completion) {
+//                 completion()
+//             }
+//         })
+//     })
+// }
 
-function getNextQuizID(completion) {
-    database.collection(sequenceCollection).findOneAndUpdate(
-        { _id: quizSequence },
-        { $inc: { sequence_value: 1 }},
-        function (err, data) {
+// function getNextQuizID(completion) {
+//     database.collection(sequenceCollection).findOneAndUpdate(
+//         { _id: quizSequence },
+//         { $inc: { sequence_value: 1 }},
+//         function (err, data) {
 
-            completion(err, data.value.sequence_value)
-        })
-}
+//             completion(err, data.value.sequence_value)
+//         })
+// }
 
-function listDatabaseEntries() {
-    console.log("Collections: - - - - - - - - - - - - - - - - - - - -");
-    listAllCollections()
+// function listDatabaseEntries() {
+//     console.log("Collections: - - - - - - - - - - - - - - - - - - - -");
+//     listAllCollections()
 
-    database.collection(quizCollection).find({}).toArray(function(err, result) {
-        console.log("Quizzes: - - - - - - - - - - - - - - - - - - - -");
-        console.log(result)
-    })
+//     database.collection(quizCollection).find({}).toArray(function(err, result) {
+//         console.log("Quizzes: - - - - - - - - - - - - - - - - - - - -");
+//         console.log(result)
+//     })
 
-    database.collection(sequenceCollection).find({}).toArray(function(err, result) {
-        console.log("Sequence: - - - - - - - - - - - - - - - - - - - -");
-        console.log(result)
-    })
-}
+//     database.collection(sequenceCollection).find({}).toArray(function(err, result) {
+//         console.log("Sequence: - - - - - - - - - - - - - - - - - - - -");
+//         console.log(result)
+//     })
+// }
 
-function listAllCollections(completion) {
-    database.listCollections().toArray(function(err, collInfos) {
-        if (err) throw err
+// function listAllCollections(completion) {
+//     database.listCollections().toArray(function(err, collInfos) {
+//         if (err) throw err
 
-        console.log(collInfos)
-        if (completion) {
-            completion()
-        }
-    })
-}
+//         console.log(collInfos)
+//         if (completion) {
+//             completion()
+//         }
+//     })
+// }
 
-function createCollection(collectionName, completion) {
-    database.createCollection(collectionName, function(err, result) {
-        if (err) throw err
+// function createCollection(collectionName, completion) {
+//     database.createCollection(collectionName, function(err, result) {
+//         if (err) throw err
 
-        if (completion) {
-            completion()
-        }
-    })
-}
+//         if (completion) {
+//             completion()
+//         }
+//     })
+// }
 
-// Drops collection table if it exists
-function cleanUp(collectionName, completion) {
-    database.listCollections().toArray(function(err, result) {
-        if (err) throw err
-        var deleting = false
+// // Drops collection table if it exists
+// function cleanUp(collectionName, completion) {
+//     database.listCollections().toArray(function(err, result) {
+//         if (err) throw err
+//         var deleting = false
 
-        result.forEach(result => {
-            if (result.name == collectionName) {
-                deleting = true
-                deleteCollection(collectionName, function() {
-                    completion()
-                })
-            }
-        })
+//         result.forEach(result => {
+//             if (result.name == collectionName) {
+//                 deleting = true
+//                 deleteCollection(collectionName, function() {
+//                     completion()
+//                 })
+//             }
+//         })
 
-        if (!deleting) completion()
-    })
-}
+//         if (!deleting) completion()
+//     })
+// }
 
-function deleteCollection(collectionName, completion) {
-    database.collection(collectionName).drop(function(err, delOK) {
-        if (err) throw err
+// function deleteCollection(collectionName, completion) {
+//     database.collection(collectionName).drop(function(err, delOK) {
+//         if (err) throw err
 
-        if (completion) {
-            completion()
-        }
-    })
-}
+//         if (completion) {
+//             completion()
+//         }
+//     })
+// }
 
 ///MARK: General utility functions
 
