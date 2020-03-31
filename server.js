@@ -23,7 +23,7 @@ app.get('/', function(req, res) {
     res.status(200).render('home', {
         title: 'Quizicle',
         recents: [
-            { file_name: "/exampleQuizzes.json" }
+            // { file_name: "/exampleQuizzes.json" }
         ],
         scripts: [
             {file_name: "/search.js"}
