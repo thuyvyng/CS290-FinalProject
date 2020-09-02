@@ -4,6 +4,10 @@ A website for making and taking quizzes.
 
 Final project for CS 290 Spring 2019.
 
+# To run (offline)
+
+- Run "npm start"
+
 # Code Style
 
 - Indent size is 4 spaces.
