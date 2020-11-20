@@ -9,6 +9,8 @@ var fs = require('fs')
 var app = express()
 app.engine('handlebars', expressHandlebars({defaultLayout: 'main'}))
 app.set('view engine', 'handlebars')
+const exampleQuizzes = require('./exampleQuizzes.json');
+
 
 // var port = process.env.PORT || 3000
 const port = 3000
@@ -20,11 +22,15 @@ app.use(express.static('public'))
 
 
 app.get('/', function(req, res) {
+    var quizzes = [];
+
+    for (i = 0; i < 3; i++){
+        quizzes.push(exampleQuizzes[i]);
+    }
+
     res.status(200).render('home', {
         title: 'Quizicle',
-        recents: [
-            // { file_name: "/exampleQuizzes.json" }
-        ],
+        recents: quizzes,
         scripts: [
             {file_name: "/search.js"}
         ]
@@ -36,8 +42,13 @@ app.get('/', function(req, res) {
 app.get('/quiz/:quizID', function(req, res, next) {
     var quizID = req.params.quizID
 
-    lookupQuiz(quizID, function(quiz) {
-        if (quiz) {
+    var test = [];
+    var check = 0;
+    for (i = 0; i < exampleQuizzes.length; i++){
+        if(exampleQuizzes[i]._id == quizID){
+            check = 1;
+            quiz = exampleQuizzes[i];
+            test.push(exampleQuizzes[i]);
             quiz.title = quiz.name + " - Quizicle"
             quiz.creation_date = getMonthYear(quiz.creation_date)
 
@@ -49,10 +60,29 @@ app.get('/quiz/:quizID', function(req, res, next) {
                     {file_name: "/practice.js"}
                 ]
             })
-        } else {
-            next()
         }
-    })
+    }
+    if(check == 0){
+        next();
+    }
+    
+    // lookupQuiz(quizID, function(quiz) {
+    //     if (quiz) {
+    //         quiz.title = quiz.name + " - Quizicle"
+    //         quiz.creation_date = getMonthYear(quiz.creation_date)
+
+    //         res.status(200).render('quiz', {
+    //             quiz: quiz,
+    //             title: quiz.name + " - Quizicle",
+    //             scripts: [
+    //                 {file_name: "/search.js"},
+    //                 {file_name: "/practice.js"}
+    //             ]
+    //         })
+    //     } else {
+    //         next()
+    //     }
+    // })
 })
 
 app.get('/edit/:quizID', function(req, res, next) {
